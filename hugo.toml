@@ -1,7 +1,7 @@
 baseURL = "https://example.org/"
 languageCode = "en-us"
 title = "jwhogg"
-theme = "digitalgarden"
+theme = ["hugo-notice", "digitalgarden"]
 
 
 [Params]
