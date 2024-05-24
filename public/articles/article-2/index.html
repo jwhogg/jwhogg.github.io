@@ -229,6 +229,19 @@ write blogs / tutorials / cheatsheets answer things on stackoverflow / reddit ma
 </script>
 <div class="space-y-2.5">
       
+      <a class="article block px-3 py-4  hover:bg-slate-200 dark:hover:bg-slate-700 "
+        href="/articles/article-3/">
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Fine-tuning a pre-trained model from HuggingFace</h3>
+        <div
+          class="text-sm  text-slate-500 dark:text-slate-400  line-clamp-2">
+          We will be using a 🤗 HuggingFace model (GPT-2 Medium)
+📙Jupyter Notebook Create train/test split for custom dataset (can use sklearn for this)
+Get the model tokeniser from transformers import AutoTokenizer tokenizer = AutoTokenizer.from_pretrained(&#34;your-model-here&#34;) #eg &#34;bert-base-cased&#34; Create encodings for train/test using tokeniser def tokenize_function(examples): return tokenizer(examples[&#34;text&#34;], padding=&#34;max_length&#34;, truncation=True) tokenized_datasets = raw_datasets.map(tokenize_function, batched=True) # where raw_datasets is a dict with train/dev/test we need padding as the inputs must fit the models input even if they are too short Create small datasets for development small_train_dataset = tokenized_datasets[&#34;train&#34;].
+        </div>
+      </a>
+      
       <a class="article block px-3 py-4  bg-slate-900 dark:bg-slate-700 text-slate-50 "
         href="/articles/article-2/">
         

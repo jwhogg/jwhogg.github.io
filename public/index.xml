@@ -6,8 +6,15 @@
     <description>Recent content in Homepage on jwhogg</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 May 2024 13:07:04 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 24 May 2024 13:29:04 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fine-tuning a pre-trained model from HuggingFace</title>
+      <link>http://localhost:1313/articles/article-3/</link>
+      <pubDate>Fri, 24 May 2024 13:29:04 +0100</pubDate>
+      <guid>http://localhost:1313/articles/article-3/</guid>
+      <description>We will be using a 🤗 HuggingFace model (GPT-2 Medium)&#xA;📙Jupyter Notebook Create train/test split for custom dataset (can use sklearn for this)&#xA;Get the model tokeniser from transformers import AutoTokenizer tokenizer = AutoTokenizer.from_pretrained(&amp;#34;your-model-here&amp;#34;) #eg &amp;#34;bert-base-cased&amp;#34; Create encodings for train/test using tokeniser def tokenize_function(examples): return tokenizer(examples[&amp;#34;text&amp;#34;], padding=&amp;#34;max_length&amp;#34;, truncation=True) tokenized_datasets = raw_datasets.map(tokenize_function, batched=True) # where raw_datasets is a dict with train/dev/test we need padding as the inputs must fit the models input even if they are too short Create small datasets for development small_train_dataset = tokenized_datasets[&amp;#34;train&amp;#34;].</description>
+    </item>
     <item>
       <title>Getting an ML job- notes from blogs</title>
       <link>http://localhost:1313/articles/article-2/</link>
