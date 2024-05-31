@@ -6,8 +6,15 @@
     <description>Recent content in Homepage on jwhogg</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 May 2024 13:29:04 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2024 17:25:04 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementing Word2Vec in python</title>
+      <link>http://localhost:1313/articles/word2vec_code_overview/</link>
+      <pubDate>Fri, 31 May 2024 17:25:04 +0100</pubDate>
+      <guid>http://localhost:1313/articles/word2vec_code_overview/</guid>
+      <description>We will be implementing the Neural Network for the Continuous Bag of Words (CBOW) from the word2vec paper. This article assumes you have a good understanding of the high-level of word2vec. This will be covered in coming articles also.&#xA;Our goal is to train with sample pairs $(y,X)$, where $y$ is the target word, and $X$ is one of the context words from within the window. The error function we want to minimise:</description>
+    </item>
     <item>
       <title>Fine-tuning a pre-trained model from HuggingFace</title>
       <link>http://localhost:1313/articles/article-3/</link>
