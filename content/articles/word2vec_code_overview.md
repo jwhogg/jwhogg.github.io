@@ -12,7 +12,7 @@ Our goal is to train with sample pairs $(y,X)$, where $y$ is the target word, an
 ![Neural Network for Word2Vec](/images/word2vec_nn_diagram.png)
 
 The error function we want to minimise:
-- I think this is negaitve log likelihood, but for our purposes is same as cross entropy loss
+- This is negaitve log likelihood, but for our purposes is same as cross entropy loss
 $$ 1/T  \sum\limits_{-c\le j\le c,j\ne 0}^{T} \log P(w_{t+j}|w_{t}) $$
 
 Here is the derivation of cross-entropy loss for backprop: 
@@ -75,8 +75,8 @@ default hyper-params:
 - learning rate: 0.05
 
 #### Sources:
-[Code based on work by Jake Tae](https://jaketae.github.io/study/word2vec/)
-[Great detailed explanation of Word2Vec by Chris McCormik](https://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
+[Code based on work by Jake Tae](https://jaketae.github.io/study/word2vec/)\
+[Great detailed explanation of Word2Vec by Chris McCormik](https://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)\
 [Stanford lecture on Word2Vec, which gives more detail on the motivation](https://www.youtube.com/watch?v=ERibwqs9p38)
 
 
