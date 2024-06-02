@@ -6,8 +6,15 @@
     <description>Recent content in Articles on jwhogg</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 May 2024 17:25:04 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2024 14:25:04 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Word2Vec in detail</title>
+      <link>http://localhost:1313/articles/word2vec_intro/</link>
+      <pubDate>Sun, 02 Jun 2024 14:25:04 +0100</pubDate>
+      <guid>http://localhost:1313/articles/word2vec_intro/</guid>
+      <description> Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements </description>
+    </item>
     <item>
       <title>Implementing Word2Vec in python</title>
       <link>http://localhost:1313/articles/word2vec_code_overview/</link>
@@ -17,24 +24,17 @@
     </item>
     <item>
       <title>Fine-tuning a pre-trained model from HuggingFace</title>
-      <link>http://localhost:1313/articles/article-3/</link>
+      <link>http://localhost:1313/articles/finetuning_pretrained_model/</link>
       <pubDate>Fri, 24 May 2024 13:29:04 +0100</pubDate>
-      <guid>http://localhost:1313/articles/article-3/</guid>
+      <guid>http://localhost:1313/articles/finetuning_pretrained_model/</guid>
       <description>We will be using a 🤗 HuggingFace model (GPT-2 Medium)&#xA;📙Jupyter Notebook Create train/test split for custom dataset (can use sklearn for this)&#xA;Get the model tokeniser from transformers import AutoTokenizer tokenizer = AutoTokenizer.from_pretrained(&amp;#34;your-model-here&amp;#34;) #eg &amp;#34;bert-base-cased&amp;#34; Create encodings for train/test using tokeniser def tokenize_function(examples): return tokenizer(examples[&amp;#34;text&amp;#34;], padding=&amp;#34;max_length&amp;#34;, truncation=True) tokenized_datasets = raw_datasets.map(tokenize_function, batched=True) # where raw_datasets is a dict with train/dev/test we need padding as the inputs must fit the models input even if they are too short Create small datasets for development small_train_dataset = tokenized_datasets[&amp;#34;train&amp;#34;].</description>
     </item>
     <item>
       <title>Getting an ML job- notes from blogs</title>
-      <link>http://localhost:1313/articles/article-2/</link>
+      <link>http://localhost:1313/articles/getting_an_ml_jpb/</link>
       <pubDate>Thu, 23 May 2024 13:07:04 +0100</pubDate>
-      <guid>http://localhost:1313/articles/article-2/</guid>
+      <guid>http://localhost:1313/articles/getting_an_ml_jpb/</guid>
       <description>Summary of this article / video&#xA;Intro can split getting an ML job into 2 steps: Getting ML skills building projects contributing to OS reading technical info Marketing ML skills communication interviewing portal creation passing application screening Strategies: Make ML jobs come to you by Learning in Public (great article!) Summary:&#xA;write blogs / tutorials / cheatsheets answer things on stackoverflow / reddit make videos draw cartoons Pull Request libraries you use OS: github repo -&amp;gt; issues -&amp;gt; &amp;lsquo;good first issue&amp;rsquo; (easy ones to solve) make your own libraries intended only for you goto conferences ==&amp;gt; make the thing you wish you had found Info</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/articles/article-1/</link>
-      <pubDate>Thu, 23 May 2024 13:07:04 +0100</pubDate>
-      <guid>http://localhost:1313/articles/article-1/</guid>
-      <description>testing</description>
     </item>
   </channel>
 </rss>
