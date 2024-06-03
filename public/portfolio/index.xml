@@ -7,5 +7,19 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Causal Implicit GAN: Data Augmentation for Causal Discovery</title>
+      <link>http://localhost:1313/portfolio/portfolio2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/portfolio2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Youtube2Summary</title>
+      <link>http://localhost:1313/portfolio/portfolio1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/portfolio1/</guid>
+      <description>Github 🔗&#xA;🤗 Pipeline to generate summaries of youtube videos, using Whisper-Small for transcription, and BART-LARGE-XSUM for summarisation.&#xA;BART has been finetuned on the popular CNN/Daily Mail Dataset, as it lends itself to summarisation tasks. Initially, we attempted to fine-tune GPT-2 for the summarisation task, but found it had poor performance: being a generative transfotmer, it generates words one-by-one, (extractive summarisation) whereas BART can generate at the sentence level (using abstractive summarisation).</description>
+    </item>
   </channel>
 </rss>

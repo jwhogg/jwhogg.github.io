@@ -11,7 +11,9 @@
     Word2Vec in detail - jwhogg
   </title>
 
-  <meta name="description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements " /><meta name="generator" content="Hugo 0.126.1">
+  <meta name="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically." /><meta name="generator" content="Hugo 0.126.1">
 
   <link rel="stylesheet" href="http://localhost:1313/css/main.css" />
 
@@ -37,15 +39,15 @@
     ]
   });"></script>
 
-
-
   
   
 
   <meta property="og:url" content="http://localhost:1313/articles/word2vec_intro/">
   <meta property="og:site_name" content="jwhogg">
   <meta property="og:title" content="Word2Vec in detail">
-  <meta property="og:description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements ">
+  <meta property="og:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="articles">
@@ -58,23 +60,29 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/digital-garden-logo.png">
   <meta name="twitter:title" content="Word2Vec in detail">
-  <meta name="twitter:description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements ">
+  <meta name="twitter:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
 
 
   
   <meta itemprop="name" content="Word2Vec in detail">
-  <meta itemprop="description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements ">
+  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
   <meta itemprop="datePublished" content="2024-06-02T14:25:04+01:00">
   <meta itemprop="dateModified" content="2024-06-02T14:25:04+01:00">
-  <meta itemprop="wordCount" content="12">
+  <meta itemprop="wordCount" content="528">
   <meta itemprop="image" content="http://localhost:1313/digital-garden-logo.png">
 
   
   <meta itemprop="name" content="Word2Vec in detail">
-  <meta itemprop="description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements ">
+  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
   <meta itemprop="datePublished" content="2024-06-02T14:25:04+01:00">
   <meta itemprop="dateModified" content="2024-06-02T14:25:04+01:00">
-  <meta itemprop="wordCount" content="12">
+  <meta itemprop="wordCount" content="528">
   <meta itemprop="image" content="http://localhost:1313/digital-garden-logo.png">
 </head><head>
   
@@ -89,7 +97,9 @@
     Word2Vec in detail - jwhogg
   </title>
 
-  <meta name="description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements " /><meta name="generator" content="Hugo 0.126.1">
+  <meta name="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically." /><meta name="generator" content="Hugo 0.126.1">
 
   <link rel="stylesheet" href="http://localhost:1313/css/main.css" />
 
@@ -115,15 +125,15 @@
     ]
   });"></script>
 
-
-
   
   
 
   <meta property="og:url" content="http://localhost:1313/articles/word2vec_intro/">
   <meta property="og:site_name" content="jwhogg">
   <meta property="og:title" content="Word2Vec in detail">
-  <meta property="og:description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements ">
+  <meta property="og:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="articles">
@@ -136,23 +146,29 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/digital-garden-logo.png">
   <meta name="twitter:title" content="Word2Vec in detail">
-  <meta name="twitter:description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements ">
+  <meta name="twitter:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
 
 
   
   <meta itemprop="name" content="Word2Vec in detail">
-  <meta itemprop="description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements ">
+  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
   <meta itemprop="datePublished" content="2024-06-02T14:25:04+01:00">
   <meta itemprop="dateModified" content="2024-06-02T14:25:04+01:00">
-  <meta itemprop="wordCount" content="12">
+  <meta itemprop="wordCount" content="528">
   <meta itemprop="image" content="http://localhost:1313/digital-garden-logo.png">
 
   
   <meta itemprop="name" content="Word2Vec in detail">
-  <meta itemprop="description" content=" Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements ">
+  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
   <meta itemprop="datePublished" content="2024-06-02T14:25:04+01:00">
   <meta itemprop="dateModified" content="2024-06-02T14:25:04+01:00">
-  <meta itemprop="wordCount" content="12">
+  <meta itemprop="wordCount" content="528">
   <meta itemprop="image" content="http://localhost:1313/digital-garden-logo.png">
 </head>
 </head>
@@ -330,7 +346,9 @@
         <h3 class="text-lg font-semibold mb-0.5">Word2Vec in detail</h3>
         <div
           class="text-sm  text-slate-400  line-clamp-2">
-           Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements 
+          In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
+Motivation For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically.
         </div>
       </a>
       
@@ -388,7 +406,8 @@ write blogs / tutorials / cheatsheets answer things on stackoverflow / reddit ma
 
       
 
-      <table>
+      <p>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.</p>
+<table>
 <thead>
 <tr>
 <th><img src="/images/word2vec_paper_1.png" alt="word2vec paper 1" width="200px" height="150px"></th>
@@ -402,6 +421,30 @@ write blogs / tutorials / cheatsheets answer things on stackoverflow / reddit ma
 </tr>
 </tbody>
 </table>
+<p><em>These 2 papers introduced word2vec to the world back in 2013</em></p>
+<h3 id="motivation">Motivation</h3>
+<p>For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically. For example, let&rsquo;s look at the popular <a href="https://huggingface.co/datasets/stanfordnlp/imdb/viewer/plain_text/train"  target="_blank" rel="noopener" >IMDB dataset</a>, which gives reviews in one column, and a binary sentiment label in the next.
+<img src="/images/imdb.png" alt="IMDB dataset"/>
+Neural Networks accept vectors, so we need a way to represent these strings as such.</p>
+<p><strong>The &lsquo;old&rsquo; way:</strong></p>
+<p>We can reprent a corpus of words using a <a href="https://en.wikipedia.org/wiki/Bag-of-words_model"  target="_blank" rel="noopener" >Bag-of-Words</a>. For some input text, we can create an unordered &lsquo;bag&rsquo; of the text&rsquo;s vocabulary (set of unique words), and how many count times it appears in the text.</p>
+<p>Raw text:</p>
+<pre tabindex="0"><code>&#34;Ogres are like onions, onions have layers.
+</code></pre><p>Bag-of-Words:</p>
+<pre tabindex="0"><code>{&#34;Ogres&#34;: 1, &#34;are&#34;: 1, &#34;onions&#34;: 2, &#34;like&#34;: 1, &#34;have&#34;: 1, &#34;layers&#34;: 1}
+</code></pre><p>We can use a BOW to represent any word from our corpus using <a href="https://www.geeksforgeeks.org/ml-one-hot-encoding/"  target="_blank" rel="noopener" >one-hot encoding</a>:</p>
+<p>Onions:  <pre>[0,0,1,0,0,0]</pre></p>
+<p>Ogres: <pre>[1,0,0,0,0,0]</pre></p>
+<p>Although an ML model <em>could</em> learn using this method, it is grossly inefficient: imagine a corpus with a vocabulary (number of unique words) of 100,000. This would mean you would need a combined vector size of 1,000,000 to encode just 10 words, where 99.9% of the vector is empty.</p>
+<p><strong>The &rsquo;new&rsquo; way</strong>:</p>
+<p>word2vec creates a <strong>distributed representation</strong> of words, which is much more efficient, and allows much a much larger corpus of text to be used in training.</p>
+<p>Each vector is continious and dense, where vectors that are closer have similar meanings. This distributed representation of a large text corpus is our goal, so we can use it in other NLP tasks, and word2vec is how we will accomplish it. Since 2013, there are better ways to do this, such as <a href="https://arxiv.org/abs/1810.04805"  target="_blank" rel="noopener" >BERT</a> and <a href="https://nlp.stanford.edu/projects/glove/"  target="_blank" rel="noopener" >GloVe</a>, which can embed more nuanced relationships between words.</p>
+<p>The famous example given in the paper is that using vector math with the final embeddings, you could do something like: $\vec{King} - \vec{Man} + \vec{Woman} = \vec{Queen}$. In reality, the resultant vector may not line up exactly with $\vec{Queen}$, but Queen should be the closest vector using <a href="https://medium.com/@milana.shxanukova15/cosine-distance-and-cosine-similarity-a5da0e4d9ded"  target="_blank" rel="noopener" >cosine distance</a>.</p>
+<p>see <a href="https://www.youtube.com/watch?v=FJtFZwbvkI4"  target="_blank" rel="noopener" >here</a> for a great explination from 3b1b on how vectors can encode meaning.</p>
+<p><strong>&lsquo;Closeness&rsquo;</strong>: If every word is a vector, &lsquo;closeness&rsquo; between any 2 words (vectors) can be defined as a dot-product of those vectors being close to 1.</p>
+<p><strong>Distributional similarity</strong>- representing a word by means of its neighbors. For a word, its meaning must be encoded by all of the words that are near it in every context. For example, if we look for the word banking across a massive corpus of text, and note all the words nearby, these words must somehow encode the meaning of &lsquo;banking&rsquo;.</p>
+<h3 id="how-word2vec-encodes-words">How Word2Vec encodes words</h3>
+<p>Now we understand why we need to encode words as dense vectors that embed meaning, we can jump in to how word2vec accomplishes this. The paper establishes 2 &lsquo;fake&rsquo; tasks that get the model to learn embeddings: &hellip;</p>
 
     </article>
   </div>

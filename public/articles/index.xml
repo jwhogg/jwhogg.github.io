@@ -13,7 +13,7 @@
       <link>http://localhost:1313/articles/word2vec_intro/</link>
       <pubDate>Sun, 02 Jun 2024 14:25:04 +0100</pubDate>
       <guid>http://localhost:1313/articles/word2vec_intro/</guid>
-      <description> Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements </description>
+      <description>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.&#xA;Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013&#xA;Motivation For many NLP tasks, we need to learn on data which can&amp;rsquo;t be easily represented numerically.</description>
     </item>
     <item>
       <title>Implementing Word2Vec in python</title>
