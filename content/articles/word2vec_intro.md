@@ -1,7 +1,7 @@
 ---
 title: 'Word2Vec in detail'
 date: 2024-06-02T14:25:04+01:00
-draft: false
+draft: true
 math: true
 katex: true
 ---

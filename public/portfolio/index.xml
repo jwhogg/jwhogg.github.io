@@ -8,11 +8,18 @@
     <language>en-us</language>
     <atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Budgeting App</title>
+      <link>http://localhost:1313/portfolio/portfolio3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/portfolio3/</guid>
+      <description>Github 🔗&#xA;On ongoing project of mine, taking inspriation from Monzo&amp;rsquo;s budgeting burndown feature. I&amp;rsquo;m building this web app with Ruby-on-Rails, and using the GoCardless API to handle linking user&amp;rsquo;s bank accounts to the app securely.&#xA;So far, I am building the MVP, and have implemented functionality to link a bank account with the app, and to store the user&amp;rsquo;s key to access their bank account data using server-side sessions, which are much more secure than cookies sesion storage.</description>
+    </item>
+    <item>
       <title>Causal Implicit GAN: Data Augmentation for Causal Discovery</title>
       <link>http://localhost:1313/portfolio/portfolio2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portfolio/portfolio2/</guid>
-      <description></description>
+      <description>Github 🔗&#xA;My University dissertation research project, where I designed and trained a GAN model for data augmentation (generating new training samples for downstream models). I was very proud to receive a score of 83 on this disseration (high 1st).&#xA;The data the GAN generates is intended for use on Causal Discovery models, an area where quality ground-truth datasets are hard to come by- making data augmentation a valuable technique. The novel contribution of my project is that the GAN is designed to implicitly learn causal relations, which we hypothesise leads to more &amp;lsquo;realistic&amp;rsquo; output data.</description>
     </item>
     <item>
       <title>Youtube2Summary</title>
