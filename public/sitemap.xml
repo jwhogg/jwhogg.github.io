@@ -8,9 +8,6 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2024-06-02T14:25:04+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/word2vec_intro/</loc>
-    <lastmod>2024-06-02T14:25:04+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/articles/word2vec_code_overview/</loc>
     <lastmod>2024-05-31T17:25:04+01:00</lastmod>
   </url><url>
@@ -19,6 +16,8 @@
   </url><url>
     <loc>http://localhost:1313/articles/getting_an_ml_jpb/</loc>
     <lastmod>2024-05-23T13:07:04+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portfolio/portfolio3/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>

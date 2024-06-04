@@ -14,3 +14,5 @@ On ongoing project of mine, taking inspriation from Monzo's budgeting burndown f
 
 So far, I am building the MVP, and have implemented functionality to link a bank account with the app, and to store the user's key to access their bank account data using server-side sessions, which are much more secure than cookies sesion storage.
 
+<img src="/images/linkingaccounts.gif" alt="Process of linking bank accounts" width="80%">
+The process of linking a bank account
