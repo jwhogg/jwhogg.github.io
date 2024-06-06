@@ -53,7 +53,7 @@ see [here](https://www.youtube.com/watch?v=FJtFZwbvkI4) for a great explination 
 
 **'Closeness'**: If every word is a vector, 'closeness' between any 2 words (vectors) can be defined as a dot-product of those vectors being close to 1.
 
-**Distributional similarity**- representing a word by means of its neighbors. For a word, its meaning must be encoded by all of the words that are near it in every context. For example, if we look for the word banking across a massive corpus of text, and note all the words nearby, these words must somehow encode the meaning of 'banking'.
+**Distributional similarity**- representing a word by means of its neighbors. For a word, its meaning must be encoded by all of the words that are near it in every context. For example, if we look for the word 'banking' across a massive corpus of text, and note all the words nearby, these words must somehow encode the meaning of 'banking'.
 
 ### How Word2Vec encodes words
 Now we understand why we need to encode words as dense vectors that embed meaning, we can jump in to how word2vec accomplishes this. The paper establishes 2 'fake' tasks that get the model to learn embeddings: ...
