@@ -6,8 +6,15 @@
     <description>Recent content in Homepage on jwhogg</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 May 2024 17:25:04 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2024 14:25:04 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Word2Vec Overview</title>
+      <link>http://localhost:1313/articles/word2vec_intro/</link>
+      <pubDate>Sun, 02 Jun 2024 14:25:04 +0100</pubDate>
+      <guid>http://localhost:1313/articles/word2vec_intro/</guid>
+      <description>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.&#xA;Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013</description>
+    </item>
     <item>
       <title>Implementing Word2Vec in python</title>
       <link>http://localhost:1313/articles/word2vec_code_overview/</link>

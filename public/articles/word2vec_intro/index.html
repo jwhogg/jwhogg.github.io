@@ -8,12 +8,11 @@
   <link rel="icon" href="/favicon.ico">
 
   <title>
-    Word2Vec in detail - jwhogg
+    Word2Vec Overview - jwhogg
   </title>
 
-  <meta name="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically." /><meta name="generator" content="Hugo 0.126.1">
+  <meta name="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013" /><meta name="generator" content="Hugo 0.126.1">
 
   <link rel="stylesheet" href="http://localhost:1313/css/main.css" />
 
@@ -44,10 +43,9 @@ Motivation For many NLP tasks, we need to learn on data which can&rsquo;t be eas
 
   <meta property="og:url" content="http://localhost:1313/articles/word2vec_intro/">
   <meta property="og:site_name" content="jwhogg">
-  <meta property="og:title" content="Word2Vec in detail">
-  <meta property="og:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
+  <meta property="og:title" content="Word2Vec Overview">
+  <meta property="og:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="articles">
@@ -59,30 +57,27 @@ Motivation For many NLP tasks, we need to learn on data which can’t be easily 
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/digital-garden-logo.png">
-  <meta name="twitter:title" content="Word2Vec in detail">
-  <meta name="twitter:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
+  <meta name="twitter:title" content="Word2Vec Overview">
+  <meta name="twitter:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013">
 
 
   
-  <meta itemprop="name" content="Word2Vec in detail">
-  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
+  <meta itemprop="name" content="Word2Vec Overview">
+  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013">
   <meta itemprop="datePublished" content="2024-06-02T14:25:04+01:00">
   <meta itemprop="dateModified" content="2024-06-02T14:25:04+01:00">
-  <meta itemprop="wordCount" content="528">
+  <meta itemprop="wordCount" content="1057">
   <meta itemprop="image" content="http://localhost:1313/digital-garden-logo.png">
 
   
-  <meta itemprop="name" content="Word2Vec in detail">
-  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
+  <meta itemprop="name" content="Word2Vec Overview">
+  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013">
   <meta itemprop="datePublished" content="2024-06-02T14:25:04+01:00">
   <meta itemprop="dateModified" content="2024-06-02T14:25:04+01:00">
-  <meta itemprop="wordCount" content="528">
+  <meta itemprop="wordCount" content="1057">
   <meta itemprop="image" content="http://localhost:1313/digital-garden-logo.png">
 </head><head>
   
@@ -94,12 +89,11 @@ Motivation For many NLP tasks, we need to learn on data which can’t be easily 
   <link rel="icon" href="/favicon.ico">
 
   <title>
-    Word2Vec in detail - jwhogg
+    Word2Vec Overview - jwhogg
   </title>
 
-  <meta name="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically." /><meta name="generator" content="Hugo 0.126.1">
+  <meta name="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013" /><meta name="generator" content="Hugo 0.126.1">
 
   <link rel="stylesheet" href="http://localhost:1313/css/main.css" />
 
@@ -130,10 +124,9 @@ Motivation For many NLP tasks, we need to learn on data which can&rsquo;t be eas
 
   <meta property="og:url" content="http://localhost:1313/articles/word2vec_intro/">
   <meta property="og:site_name" content="jwhogg">
-  <meta property="og:title" content="Word2Vec in detail">
-  <meta property="og:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
+  <meta property="og:title" content="Word2Vec Overview">
+  <meta property="og:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="articles">
@@ -145,30 +138,27 @@ Motivation For many NLP tasks, we need to learn on data which can’t be easily 
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/digital-garden-logo.png">
-  <meta name="twitter:title" content="Word2Vec in detail">
-  <meta name="twitter:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
+  <meta name="twitter:title" content="Word2Vec Overview">
+  <meta name="twitter:description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013">
 
 
   
-  <meta itemprop="name" content="Word2Vec in detail">
-  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
+  <meta itemprop="name" content="Word2Vec Overview">
+  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013">
   <meta itemprop="datePublished" content="2024-06-02T14:25:04+01:00">
   <meta itemprop="dateModified" content="2024-06-02T14:25:04+01:00">
-  <meta itemprop="wordCount" content="528">
+  <meta itemprop="wordCount" content="1057">
   <meta itemprop="image" content="http://localhost:1313/digital-garden-logo.png">
 
   
-  <meta itemprop="name" content="Word2Vec in detail">
-  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
-Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can’t be easily represented numerically.">
+  <meta itemprop="name" content="Word2Vec Overview">
+  <meta itemprop="description" content="In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
+Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013">
   <meta itemprop="datePublished" content="2024-06-02T14:25:04+01:00">
   <meta itemprop="dateModified" content="2024-06-02T14:25:04+01:00">
-  <meta itemprop="wordCount" content="528">
+  <meta itemprop="wordCount" content="1057">
   <meta itemprop="image" content="http://localhost:1313/digital-garden-logo.png">
 </head>
 </head>
@@ -302,6 +292,7 @@ Motivation For many NLP tasks, we need to learn on data which can’t be easily 
 
 
 
+
 <div class="flex flex-1 h-screen relative w-full min-w-0">
 
   <section
@@ -343,12 +334,11 @@ Motivation For many NLP tasks, we need to learn on data which can’t be easily 
         href="/articles/word2vec_intro/">
         
         
-        <h3 class="text-lg font-semibold mb-0.5">Word2Vec in detail</h3>
+        <h3 class="text-lg font-semibold mb-0.5">Word2Vec Overview</h3>
         <div
           class="text-sm  text-slate-400  line-clamp-2">
-          In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.
+          In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
 Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013
-Motivation For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically.
         </div>
       </a>
       
@@ -396,17 +386,21 @@ write blogs / tutorials / cheatsheets answer things on stackoverflow / reddit ma
     <article class="px-6 py-20 w-full mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">
 
       
-      <h1 class="!mb-2">Word2Vec in detail</h1>
+      <h1 class="!mb-2">Word2Vec Overview</h1>
 
 	  
-      <p class="text-sm text-slate-500 !mb-8"> Planted June 2, 2024
+      <div style="display: flex; justify-content: space-around; align-items: center;">
+        <p class="text-sm text-slate-500 !mb-8">Planted June 2, 2024</p>
+        <p class="text-sm text-slate-500 !mb-8">Reading time: 5 minutes</p>
+      </div>
+  
 		
 	  </p>
       
 
       
 
-      <p>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released.</p>
+      <p>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.</p>
 <table>
 <thead>
 <tr>
@@ -421,7 +415,9 @@ write blogs / tutorials / cheatsheets answer things on stackoverflow / reddit ma
 </tr>
 </tbody>
 </table>
-<p><em>These 2 papers introduced word2vec to the world back in 2013</em></p>
+<div style="text-align: center;">
+    <p style="font-size: small; color: gray;">These 2 papers introduced word2vec to the world back in 2013</p>
+</div>
 <h3 id="motivation">Motivation</h3>
 <p>For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically. For example, let&rsquo;s look at the popular <a href="https://huggingface.co/datasets/stanfordnlp/imdb/viewer/plain_text/train"  target="_blank" rel="noopener" >IMDB dataset</a>, which gives reviews in one column, and a binary sentiment label in the next.
 <img src="/images/imdb.png" alt="IMDB dataset"/>
@@ -439,12 +435,84 @@ Neural Networks accept vectors, so we need a way to represent these strings as s
 <p><strong>The &rsquo;new&rsquo; way</strong>:</p>
 <p>word2vec creates a <strong>distributed representation</strong> of words, which is much more efficient, and allows much a much larger corpus of text to be used in training.</p>
 <p>Each vector is continious and dense, where vectors that are closer have similar meanings. This distributed representation of a large text corpus is our goal, so we can use it in other NLP tasks, and word2vec is how we will accomplish it. Since 2013, there are better ways to do this, such as <a href="https://arxiv.org/abs/1810.04805"  target="_blank" rel="noopener" >BERT</a> and <a href="https://nlp.stanford.edu/projects/glove/"  target="_blank" rel="noopener" >GloVe</a>, which can embed more nuanced relationships between words.</p>
+<p>Dense embedding of &lsquo;Ogre&rsquo;:</p>
+<pre>
+array([ 7.10577386e-01, -5.09895974e-01,  1.71235001e+00,  2.05854094e+00, -4.47590043e-01, -1.00782587e+00, -1.14494191e+00, -7.94087996e-01, -2.22047371e-01,...])
+
+array_shape: (400,)
+</pre>
 <p>The famous example given in the paper is that using vector math with the final embeddings, you could do something like: $\vec{King} - \vec{Man} + \vec{Woman} = \vec{Queen}$. In reality, the resultant vector may not line up exactly with $\vec{Queen}$, but Queen should be the closest vector using <a href="https://medium.com/@milana.shxanukova15/cosine-distance-and-cosine-similarity-a5da0e4d9ded"  target="_blank" rel="noopener" >cosine distance</a>.</p>
 <p>see <a href="https://www.youtube.com/watch?v=FJtFZwbvkI4"  target="_blank" rel="noopener" >here</a> for a great explination from 3b1b on how vectors can encode meaning.</p>
 <p><strong>&lsquo;Closeness&rsquo;</strong>: If every word is a vector, &lsquo;closeness&rsquo; between any 2 words (vectors) can be defined as a dot-product of those vectors being close to 1.</p>
-<p><strong>Distributional similarity</strong>- representing a word by means of its neighbors. For a word, its meaning must be encoded by all of the words that are near it in every context. For example, if we look for the word banking across a massive corpus of text, and note all the words nearby, these words must somehow encode the meaning of &lsquo;banking&rsquo;.</p>
-<h3 id="how-word2vec-encodes-words">How Word2Vec encodes words</h3>
-<p>Now we understand why we need to encode words as dense vectors that embed meaning, we can jump in to how word2vec accomplishes this. The paper establishes 2 &lsquo;fake&rsquo; tasks that get the model to learn embeddings: &hellip;</p>
+<p><strong>Distributional similarity</strong>- representing a word by means of its neighbors. For a word, its meaning must be encoded by all of the words that are near it in every context. For example, if we look for the word &lsquo;banking&rsquo; across a massive corpus of text, and note all the words nearby, these words must somehow encode the meaning of &lsquo;banking&rsquo;.</p>
+<h2 id="how-word2vec-encodes-words">How Word2Vec encodes words</h2>
+<p>Now we understand why we need to encode words as dense vectors that embed meaning, we can jump in to how word2vec accomplishes this. The paper establishes 2 &lsquo;fake&rsquo; tasks that get the model to learn embeddings:</p>
+<img src="/images/cbow_skipgram.png" alt="word2vec paper 1" width="80%">
+<h4 id="continuous-bag-of-words-cbow">Continuous Bag-of-Words (CBOW)</h4>
+<p>The neural network is passed a few context words from around the target word, with the goal of predicting what that target word is.</p>
+<h4 id="skip-gram">Skip-gram</h4>
+<p>The opposite of CBOW, the model is instead passed the middle word, with the goal of predicting the context words around it.</p>
+<p>note: <strong>These words will be passed to the model as one-hot encodings</strong></p>
+<h3 id="retrieving-embeddings">Retrieving embeddings</h3>
+<div style="text-align: center;">
+    <img src="/images/word2vecnetwork.png" alt="word2vec network" width="80%">
+    <p style="font-size: small; color: gray;">A matrix-focused view of the model architecture, imagine data flowing left->right</p>
+</div>
+With the above representation of our word2vec model, the matrix $w_{1}$ (representing weights for the input -> hidden layer) **is actually the embeddings table for our words!** This is the 'synthetic task' that we have been training for, where the real goal is actually getting good embedding vectors.
+<div style="text-align: center;">
+    <img src="/images/hiddenlayeriswordvector.png" alt="word2vec network" width="50%">
+    <p style="font-size: small; color: gray;">credit: Chris McCormik</p>
+</div>
+<h3 id="softmax-activation">Softmax activation</h3>
+<p>Although later word2vec papers go on to describe the more efficient <a href="https://paperswithcode.com/method/hierarchical-softmax"  target="_blank" rel="noopener" >hierarchical softmax</a>, we will focus just on how softmax helps us clarify which word the network is predicting.</p>
+<p>$$  \text{Softmax}(x_{i}) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}  $$</p>
+<div style="text-align: center;">
+    <img src="/images/softmax.png" alt="softmax demo" width="65%">
+    <p style="font-size: small; color: gray;">Where the softmax gets applied (imagine data flow left->right)</p>
+</div>
+<p>The <a href="https://en.wikipedia.org/wiki/Softmax_function"  target="_blank" rel="noopener" >softmax activation</a> can take a vector of numbers, and maps each number to between $[0,1]$, where the sum of the vector will always add up to 1. From this, we can find our model&rsquo;s prediction by getting the element with the highest number.</p>
+<h2 id="training">Training</h2>
+<p>Using a context window, we can generate pairs for the model in the form: <strong>(TARGET,CONTEXT)</strong></p>
+<div style="text-align: center;">
+    <img src="/images/ogresonions1.png" alt="ogres are like onions" width="80%">
+    <!-- <p style="font-size: small; color: gray;">Where the softmax gets applied (imagine data flow left->right)</p> -->
+</div>
+Becomes the following pairs:
+<pre>
+(onions,ogres), (onions,are), (onions,like), (onions,they), (onions,have), (onions,layers)
+</pre>
+And using the next target word:
+<div style="text-align: center;">
+    <img src="/images/onionsogres2.png" alt="ogres are like onions" width="80%">
+    <p style="font-size: small; color: gray;">Let's assume our corpus ends at 'layers', otherwise with context = 3 there would be another word on the right</p>
+</div>
+Becomes these pairs:
+<pre>
+(they,ogres), (they,are), (they,like), (they,onions), (they,have), (they,layers)
+</pre>
+<p>Using a training pair, $(Y,X)$ (both one-hot encoded), the model will get passed $X$, and have its output compared against $Y$ to learn from.</p>
+<h4 id="distinction-between-cbow-and-skip-gram-training">Distinction between CBOW and Skip-gram training</h4>
+<p>It&rsquo;s important to make a distinction regarding these pairs for the 2 models, because they <em>are</em> slightly different:</p>
+<ul>
+<li>For Skip-gram, the model would be passed a target word ($Y$), and for output, predicts <strong>all</strong> the words within the context window ($ X_{i-n} $). If we had 10 words in the vocabularly, and a context size 3, this would make the model&rsquo;s output vector shape (6,10)- one row for each context word.</li>
+<li>For CBOW, the model is passed all words in the context window ($X_{i-n}$), and for output, predicts the target word that fits the best ($Y$). Inside the neural network, the projection layer, which maps input to the hidden layer, a<strong>verages all the word vectors into one</strong>, so after this step, the network is working with one average word vector.</li>
+</ul>
+<p>That&rsquo;s just about it! I hope you&rsquo;ve learned something from this article- in the next one in this series, I will be going through building the word2vec CBOW model in python within numpy.</p>
+<p>Sources / Further Reading:</p>
+<ul>
+<li>
+<p><a href="https://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/"  target="_blank" rel="noopener" >Chris McCormik- Word2Vec guide</a></p>
+</li>
+<li>
+<p><a href="https://nathanrooy.github.io/posts/2018-03-22/word2vec-from-scratch-with-python-and-numpy/"  target="_blank" rel="noopener" >Word2Vec from scratch with python and numpy</a></p>
+</li>
+<li>
+<p><a href="https://jaketae.github.io/study/word2vec/"  target="_blank" rel="noopener" >Jake Tae- Word2Vec from scratch</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/1301.3781"  target="_blank" rel="noopener" >Word2Vec original paper</a></p>
+</li>
+</ul>
 
     </article>
   </div>
