@@ -2,7 +2,7 @@ baseURL = "https://example.org/"
 languageCode = "en-us"
 title = "jwhogg"
 # theme = ["hugo-notice", "cactus"]
-theme = ["Typo", "hugo-notice"]
+theme = ["typo", "hugo-notice"]
 
 
 [params]
