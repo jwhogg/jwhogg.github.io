@@ -24,7 +24,7 @@ These 2 papers introduced word2vec to the world back in 2013: {{< /greycaption >
 
 For many NLP tasks, we need to learn on data which can't be easily represented numerically. For example, let's look at the popular [IMDB dataset](https://huggingface.co/datasets/stanfordnlp/imdb/viewer/plain_text/train), which gives reviews in one column, and a binary sentiment label in the next:
 <!-- <img src="/images/imdb.png" alt="IMDB dataset"/> -->
-![imdb](/images/imdb.webp#small)
+![imdb](/images/imdb.webp)
 Neural Networks accept vectors, so we need a way to represent these strings as such.
 
 #### The 'old' way:
