@@ -29,7 +29,7 @@ Neural Networks accept vectors, so we need a way to represent these strings as s
 
 #### The 'old' way:
 
-We can reprent a corpus of words using a [Bag-of-Words](https://en.wikipedia.org/wiki/Bag-of-words_model). For some input text, we can create an unordered 'bag' of the text's vocabulary (set of unique words), and how many count times it appears in the text.
+We can represent a corpus of words using a [Bag-of-Words](https://en.wikipedia.org/wiki/Bag-of-words_model). For some input text, we can create an unordered 'bag' of the text's vocabulary (set of unique words), and how many count times it appears in the text.
 
 Raw text:
 ```
