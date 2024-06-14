@@ -1,9 +1,11 @@
 ---
-title: 'Getting an ML job- notes from blogs'
+title: 'Notes on: Getting an ML job'
 date: 2024-05-23T13:07:04+01:00
+date: "2024-05-23"
 draft: false
+readTime: true
+toc: true
 ---
-
 
 [Summary of this article / video](https://www.mrdbourke.com/get-a-machine-learning-job/)
 
@@ -69,7 +71,7 @@ linked is a summary
 - be a craftsman, create meaningful things, and *luck* will come
 - don't follow the ambiguous "*Passion*", just focus on what interests you right now
 - strain: stretch your abilities
-##### 5 Habits of a Craftsman
+#### 5 Habits of a Craftsman
 1. Decide what type of capital market you are in
 	- Winner take all = only the best in the field will reap the rewards. There is only one type of skill and only the best will be compensated.
 	- Auction = there are multiple different types of skills, and you can bid with the skills that form your own personal strengths
@@ -138,7 +140,7 @@ The one-page limit suggestion is to help you be concise. Like the French mathema
 Highly Recommended (free) [Introduction to Machine Learning Interviews Book](https://huyenchip.com/ml-interviews-book/)
 
 ## Misc
-#### Do I need a cover letter?
+### Do I need a cover letter?
 (excerpt)
 "*The order in which I read an application: resume -> cover letter. If you have stellar experience and skills, we’d want to talk to you even if you don’t have a cover letter. Some hiring managers told me that they don’t read cover letters at all.*
 

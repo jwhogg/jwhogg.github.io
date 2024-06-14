@@ -1,10 +1,13 @@
 ---
 title: 'Implementing Word2Vec in python'
 date: 2024-05-31T17:25:04+01:00
+date: "2024-05-31"
 draft: false
 math: true
-katex: true
+readTime: true
+toc: false
 ---
+
 
 We will be implementing the Neural Network for the Continuous Bag of Words (CBOW) from the word2vec paper. This article assumes you have a good understanding of the high-level of word2vec. This will be covered in coming articles also.
 

@@ -18,7 +18,9 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.f69b4a5b91a9bc416804eda1f19d04210551b843d47318bf1913d7edce1504fb.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.020f42c86d32ba80b53d3fc40ff0090ec5f74817ba9a0391ba123948ca68c7fc.css" media="all">
+
+
 
 
 
@@ -38,11 +40,71 @@
 
 <div class="header">
     <h1 class="header-title">jwhogg</h1>
+    
 
     <div class="flex">
         
 
         
+        
+        <p class="small ">
+            <a href="/">
+                /home
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        <p class="small ">
+            <a href="/articles">
+                /articles
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        <p class="small ">
+            <a href="/portfolio">
+                /portfolio
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        
+        
+        <div class="social-icons">
+            <a href="www.linkedin.com/in/joel-w-hogg" target="_blank"
+            rel="noopener noreferrer me"
+            title="Linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+            </a>
+            <a href="https://github.com/jwhogg" target="_blank"
+            rel="noopener noreferrer me"
+            title="Github">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+            </a>
+            <a href="mailto:joelhogg45@gmail.com" target="_blank"
+            rel="noopener noreferrer me"
+            title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+            </a>
+        </div>
+    
     </div>
 
 </div>
@@ -53,6 +115,17 @@
 
 
 
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/articles/">Articles</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/articles/word2vec_code_overview/">Implementing Word2Vec in python</a>
+</div>
 
 
 <div >
@@ -70,9 +143,12 @@
       
       
       
-      <time datetime="2024-05-31T17:25:04&#43;01:00">May 31, 2024</time>
+      <time datetime="2024-05-31T00:00:00&#43;00:00">May 31, 2024</time>
       
 
+      
+      &nbsp; · &nbsp;
+      2 min read
       
     </p>
 
@@ -126,34 +202,34 @@ $$ A_1 = XW_1 \newline A_2 = A_1W_2 \newline Z = softmax(A_2) $$</p>
 </ul>
 <h5 id="pseudocode-for-the-models-forward-method">Pseudocode for the model&rsquo;s forward() method:</h5>
 <p>(where @ is dot product)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a1 <span style="color:#ff79c6">=</span> X <span style="color:#ff79c6">@</span> w1
-</span></span><span style="display:flex;"><span>a2 <span style="color:#ff79c6">=</span> a1 <span style="color:#ff79c6">@</span> w2
-</span></span><span style="display:flex;"><span>z <span style="color:#ff79c6">=</span> softmax(a2)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a1 = X @ w1
+</span></span><span style="display:flex;"><span>a2 = a1 @ w2
+</span></span><span style="display:flex;"><span>z = softmax(a2)
 </span></span></code></pre></div><p>Softmax function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">softmax</span>(X):
-</span></span><span style="display:flex;"><span>    res <span style="color:#ff79c6">=</span> []
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> X:
-</span></span><span style="display:flex;"><span>        exp <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>exp(x)
-</span></span><span style="display:flex;"><span>        res<span style="color:#ff79c6">.</span>append(exp <span style="color:#ff79c6">/</span> exp<span style="color:#ff79c6">.</span>sum())
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> res
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">softmax</span>(X):
+</span></span><span style="display:flex;"><span>    res = []
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">for</span> x <span style="font-weight:bold">in</span> X:
+</span></span><span style="display:flex;"><span>        exp = np.exp(x)
+</span></span><span style="display:flex;"><span>        res.append(exp / exp.sum())
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">return</span> res
 </span></span></code></pre></div><h5 id="pseudocode-for-backprop">Pseudocode for backprop:</h5>
 <p>remember that our loss equation worked out to be $Z - y$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>da2 <span style="color:#ff79c6">=</span> Z <span style="color:#ff79c6">-</span> y
-</span></span><span style="display:flex;"><span>dw2 <span style="color:#ff79c6">=</span> a1<span style="color:#ff79c6">.</span>T <span style="color:#ff79c6">@</span> da2
-</span></span><span style="display:flex;"><span>da1 <span style="color:#ff79c6">=</span> da2 <span style="color:#ff79c6">@</span> w2<span style="color:#ff79c6">.</span>T
-</span></span><span style="display:flex;"><span>dw1 <span style="color:#ff79c6">=</span> X<span style="color:#ff79c6">.</span>T <span style="color:#ff79c6">@</span> da1
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">assert</span>(dw2<span style="color:#ff79c6">.</span>shape<span style="color:#ff79c6">==</span>w2<span style="color:#ff79c6">.</span>shape)<span style="color:#6272a4">#ensure same shape before update weights</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">assert</span>(dw1<span style="color:#ff79c6">.</span>shape<span style="color:#ff79c6">==</span>w1<span style="color:#ff79c6">.</span>shape)
-</span></span><span style="display:flex;"><span><span style="color:#6272a4">#updating weights in model:</span>
-</span></span><span style="display:flex;"><span>w1 <span style="color:#ff79c6">-=</span> alpha <span style="color:#ff79c6">*</span> dw1
-</span></span><span style="display:flex;"><span>w2 <span style="color:#ff79c6">-=</span> alpha <span style="color:#ff79c6">*</span> dw2
-</span></span><span style="display:flex;"><span>CEL <span style="color:#ff79c6">=</span> crossentropy(Z,y) <span style="color:#6272a4">#for logging purposes (I think)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>da2 = Z - y
+</span></span><span style="display:flex;"><span>dw2 = a1.T @ da2
+</span></span><span style="display:flex;"><span>da1 = da2 @ w2.T
+</span></span><span style="display:flex;"><span>dw1 = X.T @ da1
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">assert</span>(dw2.shape==w2.shape)<span style="color:#888;font-style:italic">#ensure same shape before update weights</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">assert</span>(dw1.shape==w1.shape)
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#updating weights in model:</span>
+</span></span><span style="display:flex;"><span>w1 -= alpha * dw1
+</span></span><span style="display:flex;"><span>w2 -= alpha * dw2
+</span></span><span style="display:flex;"><span>CEL = crossentropy(Z,y) <span style="color:#888;font-style:italic">#for logging purposes (I think)</span>
 </span></span></code></pre></div><p>where:
 <code>da2</code> is the derivative of a2
 <code>alpha</code> is learning rate
 cross entropy is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">cross_entropy</span>(z, y):
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span> np<span style="color:#ff79c6">.</span>sum(np<span style="color:#ff79c6">.</span>log(z) <span style="color:#ff79c6">*</span> y)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">cross_entropy</span>(z, y):
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">return</span> - np.sum(np.log(z) * y)
 </span></span></code></pre></div><p>default hyper-params:</p>
 <ul>
 <li>iterations: 50</li>

@@ -18,7 +18,9 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.f69b4a5b91a9bc416804eda1f19d04210551b843d47318bf1913d7edce1504fb.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.020f42c86d32ba80b53d3fc40ff0090ec5f74817ba9a0391ba123948ca68c7fc.css" media="all">
+
+
 
 
 
@@ -38,11 +40,71 @@
 
 <div class="header">
     <h1 class="header-title">jwhogg</h1>
+    
 
     <div class="flex">
         
 
         
+        
+        <p class="small ">
+            <a href="/">
+                /home
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        <p class="small ">
+            <a href="/articles">
+                /articles
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        <p class="small ">
+            <a href="/portfolio">
+                /portfolio
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        
+        
+        <div class="social-icons">
+            <a href="www.linkedin.com/in/joel-w-hogg" target="_blank"
+            rel="noopener noreferrer me"
+            title="Linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+            </a>
+            <a href="https://github.com/jwhogg" target="_blank"
+            rel="noopener noreferrer me"
+            title="Github">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+            </a>
+            <a href="mailto:joelhogg45@gmail.com" target="_blank"
+            rel="noopener noreferrer me"
+            title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+            </a>
+        </div>
+    
     </div>
 
 </div>
@@ -53,6 +115,17 @@
 
 
 
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/articles/">Articles</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/articles/finetuning_pretrained_model/">Fine-tuning a pre-trained model from HuggingFace</a>
+</div>
 
 
 <div >
@@ -88,46 +161,46 @@
 
   <div class="single-content">
     <p>We will be using a 🤗 <a href="https://huggingface.co/">HuggingFace</a> model (<a href="https://huggingface.co/openai-community/gpt2-medium">GPT-2 Medium</a>)</p>
-<h5 id="jupyter-notebookhttpsgithubcomjwhogggpt-2-fine-tuningblobmaingpt-220fine-tuning20cnndailymailipynb">📙<strong><a href="https://github.com/jwhogg/GPT-2-Fine-Tuning/blob/main/GPT-2%20Fine-tuning%20CNNDailyMail.ipynb">Jupyter Notebook</a></strong></h5>
+<p>📙<strong><a href="https://github.com/jwhogg/GPT-2-Fine-Tuning/blob/main/GPT-2%20Fine-tuning%20CNNDailyMail.ipynb">Jupyter Notebook Link</a></strong></p>
 <h3 id="create-traintest-split-for-custom-dataset">Create train/test split for custom dataset</h3>
 <p>(can use sklearn for this)</p>
 <h3 id="get-the-model-tokeniser">Get the model tokeniser</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> transformers <span style="color:#ff79c6">import</span> AutoTokenizer
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">from</span> <span style="color:#666;font-weight:bold;font-style:italic">transformers</span> <span style="font-weight:bold;text-decoration:underline">import</span> AutoTokenizer
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenizer <span style="color:#ff79c6">=</span> AutoTokenizer<span style="color:#ff79c6">.</span>from_pretrained(<span style="color:#f1fa8c">&#34;your-model-here&#34;</span>) <span style="color:#6272a4">#eg &#34;bert-base-cased&#34;</span>
+</span></span><span style="display:flex;"><span>tokenizer = AutoTokenizer.from_pretrained(<span style="color:#666;font-style:italic">&#34;your-model-here&#34;</span>) <span style="color:#888;font-style:italic">#eg &#34;bert-base-cased&#34;</span>
 </span></span></code></pre></div><h3 id="create-encodings-for-traintest-using-tokeniser">Create encodings for train/test using tokeniser</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">tokenize_function</span>(examples):
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> tokenizer(examples[<span style="color:#f1fa8c">&#34;text&#34;</span>], padding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;max_length&#34;</span>, truncation<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">tokenize_function</span>(examples):
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">return</span> tokenizer(examples[<span style="color:#666;font-style:italic">&#34;text&#34;</span>], padding=<span style="color:#666;font-style:italic">&#34;max_length&#34;</span>, truncation=<span style="font-weight:bold;text-decoration:underline">True</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenized_datasets <span style="color:#ff79c6">=</span> raw_datasets<span style="color:#ff79c6">.</span>map(tokenize_function, batched<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># where raw_datasets is a dict with train/dev/test</span>
+</span></span><span style="display:flex;"><span>tokenized_datasets = raw_datasets.map(tokenize_function, batched=<span style="font-weight:bold;text-decoration:underline">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># where raw_datasets is a dict with train/dev/test</span>
 </span></span></code></pre></div><ul>
 <li>we need padding as the inputs must fit the models input even if they are too short</li>
 </ul>
 <h5 id="create-small-datasets-for-development">Create small datasets for development</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>small_train_dataset <span style="color:#ff79c6">=</span> tokenized_datasets[<span style="color:#f1fa8c">&#34;train&#34;</span>]<span style="color:#ff79c6">.</span>shuffle(seed<span style="color:#ff79c6">=</span><span style="color:#bd93f9">42</span>)<span style="color:#ff79c6">.</span>select(<span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1000</span>)) 
-</span></span><span style="display:flex;"><span>small_eval_dataset <span style="color:#ff79c6">=</span> tokenized_datasets[<span style="color:#f1fa8c">&#34;test&#34;</span>]<span style="color:#ff79c6">.</span>shuffle(seed<span style="color:#ff79c6">=</span><span style="color:#bd93f9">42</span>)<span style="color:#ff79c6">.</span>select(<span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1000</span>)) 
-</span></span><span style="display:flex;"><span>full_train_dataset <span style="color:#ff79c6">=</span> tokenized_datasets[<span style="color:#f1fa8c">&#34;train&#34;</span>]
-</span></span><span style="display:flex;"><span>full_eval_dataset <span style="color:#ff79c6">=</span> tokenized_datasets[<span style="color:#f1fa8c">&#34;test&#34;</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>small_train_dataset = tokenized_datasets[<span style="color:#666;font-style:italic">&#34;train&#34;</span>].shuffle(seed=42).select(<span style="font-weight:bold;font-style:italic">range</span>(1000)) 
+</span></span><span style="display:flex;"><span>small_eval_dataset = tokenized_datasets[<span style="color:#666;font-style:italic">&#34;test&#34;</span>].shuffle(seed=42).select(<span style="font-weight:bold;font-style:italic">range</span>(1000)) 
+</span></span><span style="display:flex;"><span>full_train_dataset = tokenized_datasets[<span style="color:#666;font-style:italic">&#34;train&#34;</span>]
+</span></span><span style="display:flex;"><span>full_eval_dataset = tokenized_datasets[<span style="color:#666;font-style:italic">&#34;test&#34;</span>]
 </span></span></code></pre></div><ul>
 <li>use the full ones once you have all params figured out and want to do the final training</li>
 </ul>
 <h3 id="import-model">Import model</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> transformers <span style="color:#ff79c6">import</span> GPT2Tokenizer, GPT2Model
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">from</span> <span style="color:#666;font-weight:bold;font-style:italic">transformers</span> <span style="font-weight:bold;text-decoration:underline">import</span> GPT2Tokenizer, GPT2Model
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenizer <span style="color:#ff79c6">=</span> GPT2Tokenizer<span style="color:#ff79c6">.</span>from_pretrained(<span style="color:#f1fa8c">&#39;gpt2-medium&#39;</span>)
-</span></span><span style="display:flex;"><span>model <span style="color:#ff79c6">=</span> GPT2Model<span style="color:#ff79c6">.</span>from_pretrained(<span style="color:#f1fa8c">&#39;gpt2-medium&#39;</span>)
+</span></span><span style="display:flex;"><span>tokenizer = GPT2Tokenizer.from_pretrained(<span style="color:#666;font-style:italic">&#39;gpt2-medium&#39;</span>)
+</span></span><span style="display:flex;"><span>model = GPT2Model.from_pretrained(<span style="color:#666;font-style:italic">&#39;gpt2-medium&#39;</span>)
 </span></span></code></pre></div><h3 id="training">Training</h3>
 <ul>
 <li><em>Transformers</em> has a <code>Trainer</code> class that can speed up training of models, and does a lot of the work for us</li>
 <li><code>Trainer</code> is defined as a dict of arguments and a <code>compute_metrics</code> function, but first we need to define these:</li>
 </ul>
 <h5 id="training-args">Training args:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> transformers <span style="color:#ff79c6">import</span> TrainingArguments
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">from</span> <span style="color:#666;font-weight:bold;font-style:italic">transformers</span> <span style="font-weight:bold;text-decoration:underline">import</span> TrainingArguments
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>training_args <span style="color:#ff79c6">=</span> TrainingArguments(<span style="color:#f1fa8c">&#34;test_trainer&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#6272a4">#use just default args to start with</span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4">#add arg: evaluation_strategy=&#34;epoch&#34; to report metrics every epoch</span>
+</span></span><span style="display:flex;"><span>training_args = TrainingArguments(<span style="color:#666;font-style:italic">&#34;test_trainer&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#use just default args to start with</span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#add arg: evaluation_strategy=&#34;epoch&#34; to report metrics every epoch</span>
 </span></span></code></pre></div><h4 id="configure-training-metrics">Configure training metrics</h4>
 <ul>
 <li><em>Trainer</em> can take a <code>compute_metrics()</code> function, which takes predictions and labels (in a tuple), and returns a dict with metric names and values</li>
@@ -137,24 +210,24 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> numpy <span style="color:#ff79c6">as</span> np
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> datasets <span style="color:#ff79c6">import</span> load_metric
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">import</span> <span style="color:#666;font-weight:bold;font-style:italic">numpy</span> <span style="font-weight:bold;text-decoration:underline">as</span> <span style="color:#666;font-weight:bold;font-style:italic">np</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">from</span> <span style="color:#666;font-weight:bold;font-style:italic">datasets</span> <span style="font-weight:bold;text-decoration:underline">import</span> load_metric
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>metric <span style="color:#ff79c6">=</span> load_metric(<span style="color:#f1fa8c">&#34;accuracy&#34;</span>)
+</span></span><span style="display:flex;"><span>metric = load_metric(<span style="color:#666;font-style:italic">&#34;accuracy&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">compute_metrics</span>(eval_pred):
-</span></span><span style="display:flex;"><span>    logits, labels <span style="color:#ff79c6">=</span> eval_pred <span style="color:#6272a4">#splitting tuple into the output logits and their labels</span>
-</span></span><span style="display:flex;"><span>    predictions <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>argmax(logits, axis<span style="color:#ff79c6">=-</span><span style="color:#bd93f9">1</span>) <span style="color:#6272a4">#convert logits into predictions</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> metric<span style="color:#ff79c6">.</span>compute(predictions<span style="color:#ff79c6">=</span>predictions, references<span style="color:#ff79c6">=</span>labels) <span style="color:#6272a4">#calc predict accuracy</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">compute_metrics</span>(eval_pred):
+</span></span><span style="display:flex;"><span>    logits, labels = eval_pred <span style="color:#888;font-style:italic">#splitting tuple into the output logits and their labels</span>
+</span></span><span style="display:flex;"><span>    predictions = np.argmax(logits, axis=-1) <span style="color:#888;font-style:italic">#convert logits into predictions</span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">return</span> metric.compute(predictions=predictions, references=labels) <span style="color:#888;font-style:italic">#calc predict accuracy</span>
 </span></span></code></pre></div><h3 id="define-trainer">Define Trainer</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> Transformers <span style="color:#ff79c6">import</span> Trainer
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">from</span> <span style="color:#666;font-weight:bold;font-style:italic">Transformers</span> <span style="font-weight:bold;text-decoration:underline">import</span> Trainer
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>trainer <span style="color:#ff79c6">=</span> Trainer(
-</span></span><span style="display:flex;"><span>    model<span style="color:#ff79c6">=</span>model,
-</span></span><span style="display:flex;"><span>    args<span style="color:#ff79c6">=</span>training_args,
-</span></span><span style="display:flex;"><span>    train_dataset<span style="color:#ff79c6">=</span>small_train_dataset,
-</span></span><span style="display:flex;"><span>    eval_dataset<span style="color:#ff79c6">=</span>small_eval_dataset,
-</span></span><span style="display:flex;"><span>    compute_metrics<span style="color:#ff79c6">=</span>compute_metrics,
+</span></span><span style="display:flex;"><span>trainer = Trainer(
+</span></span><span style="display:flex;"><span>    model=model,
+</span></span><span style="display:flex;"><span>    args=training_args,
+</span></span><span style="display:flex;"><span>    train_dataset=small_train_dataset,
+</span></span><span style="display:flex;"><span>    eval_dataset=small_eval_dataset,
+</span></span><span style="display:flex;"><span>    compute_metrics=compute_metrics,
 </span></span><span style="display:flex;"><span>)
 </span></span></code></pre></div><h3 id="train-and-evaluate">Train and Evaluate:</h3>
 <pre tabindex="0"><code>trainer.train()

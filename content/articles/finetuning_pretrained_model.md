@@ -5,7 +5,9 @@ draft: false
 ---
 
 We will be using a 🤗 [HuggingFace](https://huggingface.co/) model ([GPT-2 Medium](https://huggingface.co/openai-community/gpt2-medium))
-##### 📙**[Jupyter Notebook](https://github.com/jwhogg/GPT-2-Fine-Tuning/blob/main/GPT-2%20Fine-tuning%20CNNDailyMail.ipynb)**
+
+📙**[Jupyter Notebook Link](https://github.com/jwhogg/GPT-2-Fine-Tuning/blob/main/GPT-2%20Fine-tuning%20CNNDailyMail.ipynb)**
+
 
 ### Create train/test split for custom dataset
 (can use sklearn for this)

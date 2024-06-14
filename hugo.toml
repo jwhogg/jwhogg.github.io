@@ -4,109 +4,80 @@ title = "jwhogg"
 # theme = ["hugo-notice", "cactus"]
 theme = ["Typo", "hugo-notice"]
 
-googleAnalytics = "G-VHFF3CGGEV"
 
+[params]
+# Meta description
+description = "A Tech Blog"
 
-[Params]
-  description = "My Digital Garden on the Internet"
-  images = ['/digital-garden-logo.png']
-  enableSearch = true
-  theme = 'light'
+# Appearance settings
+theme = 'light'
 
-  homeCollectionTitle = 'Posts'
-  homeCollection = 'articles'
+# Intro on main page, content is markdown
+homeIntroTitle = "Hi, I'm Joel 👋"
+homeIntroContent = """
+This is a space for me to post notes, research, and longer articles on a varitey of subjects- mostly keeping within tech.
 
-# [Params.newsletter]
-#   title = ""
-#   description = "A curated weekly digest once a week to your mailbox"
+Recently, I've been deep-diving the word2vec literature, and am working on implementing it using numpy. I've also been working on a budgeting app with banking integration.
+"""
+homeImage = true
 
-#   # Supports buttondown, substack and revue
-#   provider = "buttondown"
+# Collection to display on home
+homeCollectionTitle = 'Articles'
+homeCollection = 'articles'
 
-#   # Buttondown - URL from share page; Refer: https://blog.buttondown.email/2019/10/11/adding-a-buttondown-subscription-form-to-webflow#getting-your-subscription-url
-#   # Substack - URL of the newsletter homepage; Example: https://on.substack.com/
-#   # Revue - Username
-#   path = "https://buttondown.email/api/emails/embed-subscribe/"
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '2 Jan 2006'
 
-# [menu]
-# [[menu.main]]
-#   name = 'Home'
-#   url = '/'
-#   weight = 1
-# [[menu.main]]
-#   name = 'Content'
-#   params.header = true
-#   weight = 2
-# [[menu.main]]
-#   name = 'Articles'
-#   url = '/articles'
-#   weight = 3
-# [[menu.main]]
-#   name = 'Portfolio'
-#   url = '/portfolio'
-#   weight = 4
+# Breadcrumbs
+breadcrumbs = true
+
+# Social icons
+[[params.social]]
+name = "linkedin"
+url = "www.linkedin.com/in/joel-w-hogg"
+
+# [[params.social]]
+# name = "medium"
+# url = "https://medium.com/@user"
+
+[[params.social]]
+name = "github"
+url = "https://github.com/jwhogg"
+
+[[params.social]]
+name = "email"
+url = "mailto:joelhogg45@gmail.com"
+
+# Main menu pages
 [[params.menu]]
 name = "home"
 url = "/"
+
 [[params.menu]]
-name = "posts"
+name = "articles"
 url = "/articles"
 
-# [[menu.main]]
-#   name = 'Stack'
-#   url = '/stack'
-#   weight = 5
-# [[menu.main]]
-#   name = 'Links'
-#   params.header = true
-#   weight = 6
-# [[menu.main]]
-#   name = 'Polywork'
-#   url = 'https://polywork.com'
-#   weight = 7
+# [[params.menu]]
+# name = "about"
+# url = "/about"
 
-# [[menu.social]]
-#   name = 'Twitter'
-#   url = 'https://twitter.com'
-#   weight = 1
-[[menu.social]]
-  name = 'GitHub'
-  url = 'https://github.com/jwhogg'
-  weight = 2
-[[menu.social]]
-  name = 'LinkedIn'
-  url = 'https://linkedin.com/in/joel-w-hogg'
-  weight = 3
-# [[menu.social]]
-#   name = 'Instagram'
-#   url = 'https://instagram.com'
-#   weight = 4
-# [[menu.social]]
-#   name = 'Dribbble'
-#   url = 'https://dribbble.com'
-#   weight = 5
-# [[menu.social]]
-#   name = 'Codepen'
-#   url = 'https://codepen.io'
-#   weight = 6
-# [[menu.social]]
-#   name = 'Twitch'
-#   url = 'https://twitch.com'
-#   weight = 7
-[[menu.social]]
-  name = 'Email'
-  url = 'mailto:joelhogg45@gmail.com'
-  weight = 8
-# [[menu.social]]
-#   name = 'RSS'
-#   url = '/articles/index.xml'
-#   weight = 9
+[[params.menu]]
+name = "portfolio"
+url = "/portfolio"
 
-
-# syntax highlight settings
+# Syntax highligth on code blocks
 [markup]
-  [markup.highlight]
-    style = "dracula"
-  [markup.goldmark.renderer]
-    # Enable to include inline HTML
-    unsafe = true
+[markup.highlight]
+style = 'algol'
+
+# Giscus comments
+[params.giscus]
+enable = false
+repo = "user/repo"
+repoid = "repoId"
+category = "General"
+categoryid = "categoryId"
+mapping = "pathname"
+theme = "preferred_color_scheme"

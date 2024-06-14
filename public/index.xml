@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homepage on jwhogg</title>
+    <title>Home on jwhogg</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content in Homepage on jwhogg</description>
+    <description>Recent content in Home on jwhogg</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jun 2024 14:25:04 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Word2Vec Overview</title>
       <link>http://localhost:1313/articles/word2vec_intro/</link>
-      <pubDate>Sun, 02 Jun 2024 14:25:04 +0100</pubDate>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/word2vec_intro/</guid>
-      <description>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.&#xA;Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements These 2 papers introduced word2vec to the world back in 2013</description>
+      <description>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.&#xA;These 2 papers introduced word2vec to the world back in 2013: Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements Motivation For many NLP tasks, we need to learn on data which can&amp;rsquo;t be easily represented numerically.</description>
+    </item>
+    <item>
+      <title>Budgeting App</title>
+      <link>http://localhost:1313/portfolio/portfolio3/</link>
+      <pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/portfolio3/</guid>
+      <description>Github 🔗&#xA;On ongoing project of mine, taking inspriation from Monzo&amp;rsquo;s budgeting burndown feature. I&amp;rsquo;m building this web app with Ruby-on-Rails, and using the GoCardless API to handle linking user&amp;rsquo;s bank accounts to the app securely.&#xA;The inspiration for the project: monzo&amp;rsquo;s &amp;rsquo;targets&amp;rsquo; tab. So far, I am building the MVP, and have implemented functionality to link a bank account with the app, and to store the user&amp;rsquo;s key to access their bank account data using server-side sessions, which are much more secure than cookies sesion storage.</description>
+    </item>
+    <item>
+      <title>Fine-tuning GPT2-2</title>
+      <link>http://localhost:1313/portfolio/portfolio4/</link>
+      <pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/portfolio4/</guid>
+      <description>Github 🔗&#xA;A brief jupyter notebook I made showing how to fine tune a model using the 🤗 Transformers libary. The example I wrote uses the popular CNN/DailyMail dataset.</description>
+    </item>
+    <item>
+      <title>Youtube2Summary</title>
+      <link>http://localhost:1313/portfolio/portfolio1/</link>
+      <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/portfolio1/</guid>
+      <description>Github 🔗&#xA;🤗 Pipeline to generate summaries of youtube videos, using Whisper-Small for transcription, and BART-LARGE-XSUM for summarisation.&#xA;BART has been finetuned on the popular CNN/Daily Mail Dataset, as it lends itself to summarisation tasks. Initially, we attempted to fine-tune GPT-2 for the summarisation task, but found it had poor performance: being a generative transfotmer, it generates words one-by-one, (extractive summarisation) whereas BART can generate at the sentence level (using abstractive summarisation).</description>
     </item>
     <item>
       <title>Implementing Word2Vec in python</title>
       <link>http://localhost:1313/articles/word2vec_code_overview/</link>
-      <pubDate>Fri, 31 May 2024 17:25:04 +0100</pubDate>
+      <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/word2vec_code_overview/</guid>
       <description>We will be implementing the Neural Network for the Continuous Bag of Words (CBOW) from the word2vec paper. This article assumes you have a good understanding of the high-level of word2vec. This will be covered in coming articles also.&#xA;Our goal is to train with sample pairs $(y,X)$, where $y$ is the target word, and $X$ is one of the context words from within the window. The error function we want to minimise:</description>
     </item>
@@ -27,42 +48,28 @@
       <link>http://localhost:1313/articles/finetuning_pretrained_model/</link>
       <pubDate>Fri, 24 May 2024 13:29:04 +0100</pubDate>
       <guid>http://localhost:1313/articles/finetuning_pretrained_model/</guid>
-      <description>We will be using a 🤗 HuggingFace model (GPT-2 Medium)&#xA;📙Jupyter Notebook Create train/test split for custom dataset (can use sklearn for this)&#xA;Get the model tokeniser from transformers import AutoTokenizer tokenizer = AutoTokenizer.from_pretrained(&amp;#34;your-model-here&amp;#34;) #eg &amp;#34;bert-base-cased&amp;#34; Create encodings for train/test using tokeniser def tokenize_function(examples): return tokenizer(examples[&amp;#34;text&amp;#34;], padding=&amp;#34;max_length&amp;#34;, truncation=True) tokenized_datasets = raw_datasets.map(tokenize_function, batched=True) # where raw_datasets is a dict with train/dev/test we need padding as the inputs must fit the models input even if they are too short Create small datasets for development small_train_dataset = tokenized_datasets[&amp;#34;train&amp;#34;].</description>
+      <description>We will be using a 🤗 HuggingFace model (GPT-2 Medium)&#xA;📙Jupyter Notebook Link&#xA;Create train/test split for custom dataset (can use sklearn for this)&#xA;Get the model tokeniser from transformers import AutoTokenizer tokenizer = AutoTokenizer.from_pretrained(&amp;#34;your-model-here&amp;#34;) #eg &amp;#34;bert-base-cased&amp;#34; Create encodings for train/test using tokeniser def tokenize_function(examples): return tokenizer(examples[&amp;#34;text&amp;#34;], padding=&amp;#34;max_length&amp;#34;, truncation=True) tokenized_datasets = raw_datasets.map(tokenize_function, batched=True) # where raw_datasets is a dict with train/dev/test we need padding as the inputs must fit the models input even if they are too short Create small datasets for development small_train_dataset = tokenized_datasets[&amp;#34;train&amp;#34;].</description>
     </item>
     <item>
-      <title>Getting an ML job- notes from blogs</title>
+      <title>Notes on: Getting an ML job</title>
       <link>http://localhost:1313/articles/getting_an_ml_jpb/</link>
-      <pubDate>Thu, 23 May 2024 13:07:04 +0100</pubDate>
+      <pubDate>Thu, 23 May 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/getting_an_ml_jpb/</guid>
       <description>Summary of this article / video&#xA;Intro can split getting an ML job into 2 steps: Getting ML skills building projects contributing to OS reading technical info Marketing ML skills communication interviewing portal creation passing application screening Strategies: Make ML jobs come to you by Learning in Public (great article!) Summary:&#xA;write blogs / tutorials / cheatsheets answer things on stackoverflow / reddit make videos draw cartoons Pull Request libraries you use OS: github repo -&amp;gt; issues -&amp;gt; &amp;lsquo;good first issue&amp;rsquo; (easy ones to solve) make your own libraries intended only for you goto conferences ==&amp;gt; make the thing you wish you had found Info</description>
     </item>
     <item>
-      <title>Budgeting App</title>
-      <link>http://localhost:1313/portfolio/portfolio3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio3/</guid>
-      <description>Github 🔗&#xA;On ongoing project of mine, taking inspriation from Monzo&amp;rsquo;s budgeting burndown feature. I&amp;rsquo;m building this web app with Ruby-on-Rails, and using the GoCardless API to handle linking user&amp;rsquo;s bank accounts to the app securely.&#xA;So far, I am building the MVP, and have implemented functionality to link a bank account with the app, and to store the user&amp;rsquo;s key to access their bank account data using server-side sessions, which are much more secure than cookies sesion storage.</description>
-    </item>
-    <item>
       <title>Causal Implicit GAN: Data Augmentation for Causal Discovery</title>
       <link>http://localhost:1313/portfolio/portfolio2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 May 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portfolio/portfolio2/</guid>
-      <description>Github 🔗&#xA;My University dissertation research project, where I designed and trained a GAN model for data augmentation (generating new training samples for downstream models). I was very proud to receive a score of 83 on this disseration (high 1st).&#xA;The data the GAN generates is intended for use on Causal Discovery models, an area where quality ground-truth datasets are hard to come by- making data augmentation a valuable technique. The novel contribution of my project is that the GAN is designed to implicitly learn causal relations, which we hypothesise leads to more &amp;lsquo;realistic&amp;rsquo; output data.</description>
+      <description>Github 🔗&#xA;My University dissertation research project, where I designed and trained a GAN model for data augmentation (generating new training samples for downstream models). I was very proud to receive a score of 83 on this disseration (high 1st).&#xA;A high-level overview of the CIGAN project The data the GAN generates is intended for use on Causal Discovery models, an area where quality ground-truth datasets are hard to come by- making data augmentation a valuable technique.</description>
     </item>
     <item>
-      <title>Fine-tuning GPT2-2</title>
-      <link>http://localhost:1313/portfolio/portfolio4/</link>
+      <title>Homepage</title>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio4/</guid>
-      <description>Github 🔗&#xA;A brief jupyter notebook I made showing how to fine tune a model using the 🤗 Transformers libary. The example I wrote uses the popular CNN/DailyMail dataset.</description>
-    </item>
-    <item>
-      <title>Youtube2Summary</title>
-      <link>http://localhost:1313/portfolio/portfolio1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio1/</guid>
-      <description>Github 🔗&#xA;🤗 Pipeline to generate summaries of youtube videos, using Whisper-Small for transcription, and BART-LARGE-XSUM for summarisation.&#xA;BART has been finetuned on the popular CNN/Daily Mail Dataset, as it lends itself to summarisation tasks. Initially, we attempted to fine-tune GPT-2 for the summarisation task, but found it had poor performance: being a generative transfotmer, it generates words one-by-one, (extractive summarisation) whereas BART can generate at the sentence level (using abstractive summarisation).</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>Hi, I&amp;rsquo;m Joel 👋 Welcome to my digital garden!</description>
     </item>
   </channel>
 </rss>

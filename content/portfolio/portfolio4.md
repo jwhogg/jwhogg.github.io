@@ -1,6 +1,6 @@
 ---
 title: 'Fine-tuning GPT2-2'
-date: 2024-06-042T21:52:04+01:00
+date: "2024-06-04"
 draft: false
 # math: true
 # katex: true

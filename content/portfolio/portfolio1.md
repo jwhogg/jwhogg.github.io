@@ -1,6 +1,6 @@
 ---
 title: 'Youtube2Summary'
-date: 2024-06-032T14:25:04+01:00
+date: "2024-06-03"
 draft: false
 # math: true
 # katex: true

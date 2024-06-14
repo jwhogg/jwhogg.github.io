@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on jwhogg</title>
+    <link>http://localhost:1313/tags/guides/</link>
+    <description>Recent content in Guides on jwhogg</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Word2Vec Overview</title>
+      <link>http://localhost:1313/articles/word2vec_intro/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/word2vec_intro/</guid>
+      <description>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.&#xA;These 2 papers introduced word2vec to the world back in 2013: Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements Motivation For many NLP tasks, we need to learn on data which can&amp;rsquo;t be easily represented numerically.</description>
+    </item>
+  </channel>
+</rss>
