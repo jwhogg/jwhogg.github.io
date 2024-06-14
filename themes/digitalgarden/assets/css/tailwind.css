@@ -4,6 +4,7 @@
 
 body {
   @apply text-slate-900 dark:bg-slate-900 dark:text-slate-50 dark:selection:bg-slate-600;
+  @apply flex flex-col min-h-screen; /* Ensure body takes full height and uses Flexbox */
 }
 
 * {
@@ -33,3 +34,8 @@ html.dark *::-webkit-scrollbar-thumb {
 html.dark * {
   scrollbar-color: theme("colors.slate.400") theme("colors.slate.600");
 }
+
+article.single {
+  @apply flex flex-col min-h-screen; /* Ensure body takes full height and uses Flexbox */
+}
+

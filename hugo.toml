@@ -1,13 +1,20 @@
 baseURL = "https://example.org/"
 languageCode = "en-us"
 title = "jwhogg"
-theme = ["hugo-notice", "digitalgarden"]
+# theme = ["hugo-notice", "cactus"]
+theme = ["Typo", "hugo-notice"]
+
+googleAnalytics = "G-VHFF3CGGEV"
 
 
 [Params]
   description = "My Digital Garden on the Internet"
   images = ['/digital-garden-logo.png']
   enableSearch = true
+  theme = 'light'
+
+  homeCollectionTitle = 'Posts'
+  homeCollection = 'articles'
 
 # [Params.newsletter]
 #   title = ""
@@ -21,23 +28,30 @@ theme = ["hugo-notice", "digitalgarden"]
 #   # Revue - Username
 #   path = "https://buttondown.email/api/emails/embed-subscribe/"
 
-[menu]
-[[menu.main]]
-  name = 'Home'
-  url = '/'
-  weight = 1
-[[menu.main]]
-  name = 'Content'
-  params.header = true
-  weight = 2
-[[menu.main]]
-  name = 'Articles'
-  url = '/articles'
-  weight = 3
-[[menu.main]]
-  name = 'Portfolio'
-  url = '/portfolio'
-  weight = 4
+# [menu]
+# [[menu.main]]
+#   name = 'Home'
+#   url = '/'
+#   weight = 1
+# [[menu.main]]
+#   name = 'Content'
+#   params.header = true
+#   weight = 2
+# [[menu.main]]
+#   name = 'Articles'
+#   url = '/articles'
+#   weight = 3
+# [[menu.main]]
+#   name = 'Portfolio'
+#   url = '/portfolio'
+#   weight = 4
+[[params.menu]]
+name = "home"
+url = "/"
+[[params.menu]]
+name = "posts"
+url = "/articles"
+
 # [[menu.main]]
 #   name = 'Stack'
 #   url = '/stack'

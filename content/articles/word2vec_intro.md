@@ -6,17 +6,13 @@ math: true
 katex: true
 readingtime: true
 ---
-
 In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.
 
 | <img src="/images/word2vec_paper_1.png" alt="word2vec paper 1" width="200px" height="150px"> | <img src="/images/word2vec_paper_2.png" alt="word2vec paper 2" width="200px" height="150px"> |
 |----------------------------------------------------|-----------------------------------------------------|
 | Word2Vec Paper 1- introducing CBOW and Skip-Gram   | Word2Vec Paper 2- Performance Improvements           |
     
-<div style="text-align: center;">
-    <p style="font-size: small; color: gray;">These 2 papers introduced word2vec to the world back in 2013</p>
-</div>
-
+<p style="text-align: center; font-size: small; color: gray;">These 2 papers introduced word2vec to the world back in 2013</p>
 
 ### Motivation
 
@@ -80,10 +76,8 @@ The opposite of CBOW, the model is instead passed the middle word, with the goal
 note: **These words will be passed to the model as one-hot encodings**
 
 ### Retrieving embeddings
-<div style="text-align: center;">
-    <img src="/images/word2vecnetwork.png" alt="word2vec network" width="80%">
-    <p style="font-size: small; color: gray;">A matrix-focused view of the model architecture, imagine data flowing left->right</p>
-</div>
+<img src="/images/word2vecnetwork.png" alt="word2vec network" width="80%">
+<p style="font-size: small; color: gray;">A matrix-focused view of the model architecture, imagine data flowing left->right</p>
 With the above representation of our word2vec model, the matrix $w_{1}$ (representing weights for the input -> hidden layer) **is actually the embeddings table for our words!** This is the 'synthetic task' that we have been training for, where the real goal is actually getting good embedding vectors.
 
 <div style="text-align: center;">
