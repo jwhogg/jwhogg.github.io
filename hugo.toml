@@ -8,6 +8,7 @@ theme = ["typo", "hugo-notice"]
 [params]
 # Meta description
 description = "Joel's Personal Website"
+gtm_id = "G-VHFF3CGGEV"
 
 # Appearance settings
 theme = 'light'
