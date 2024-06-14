@@ -7,7 +7,7 @@ theme = ["Typo", "hugo-notice"]
 
 [params]
 # Meta description
-description = "A Tech Blog"
+description = "Joel's Personal Website"
 
 # Appearance settings
 theme = 'light'
