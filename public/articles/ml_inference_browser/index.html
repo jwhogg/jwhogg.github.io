@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width"><meta name="description" content="" />
+
+<title>
+    
+    Edge AI: ML inference in the browser | jwhogg
+    
+</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.020f42c86d32ba80b53d3fc40ff0090ec5f74817ba9a0391ba123948ca68c7fc.css" media="all">
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="light">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+    <h1 class="header-title">jwhogg</h1>
+    
+
+    <div class="flex">
+        
+
+        
+        
+        <p class="small ">
+            <a href="/">
+                /home
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        <p class="small ">
+            <a href="/articles">
+                /articles
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        <p class="small ">
+            <a href="/portfolio">
+                /portfolio
+            </a>
+        </p>
+
+        <p>        </p>
+        
+        
+        
+        <div class="social-icons">
+            <a href="www.linkedin.com/in/joel-w-hogg" target="_blank"
+            rel="noopener noreferrer me"
+            title="Linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+            </a>
+            <a href="https://github.com/jwhogg" target="_blank"
+            rel="noopener noreferrer me"
+            title="Github">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+            </a>
+            <a href="mailto:joelhogg45@gmail.com" target="_blank"
+            rel="noopener noreferrer me"
+            title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+            </a>
+        </div>
+    
+    </div>
+
+</div>
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/articles/">Articles</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/articles/ml_inference_browser/">Edge AI: ML inference in the browser</a>
+</div>
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Edge AI: ML inference in the browser</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-06-18T00:00:00&#43;00:00">June 18, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      3 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>Recently, I stumbled across a <a href="https://whisper.ggerganov.com/">guy who ported</a> OpenAI&rsquo;s <a href="https://github.com/openai/whisper">Whisper</a> model into c++, in various sizes, allowing the model to be run on-device, at impressive speed.</p>
+<p><div style="display: flex; justify-content: center;">
+    <p style="text-align: center; font-size: small; color: gray;">
+        <a href="https://github.com/ggerganov/whisper.cpp">(source)</a>
+    </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure class=" img-smaller">
+
+    <div>
+        <img loading="lazy" alt="whisper running on iphone" src=" /images/whisper_iphone.gif#smaller">
+    </div>
+
+    
+</figure></p>
+<p>I went down a rabbit-hole, and found a whole family of popular models that had been ported to work on-device, from the browser:</p>
+<ul>
+<li><a href="https://websd.mlc.ai/#text-to-image-generation-demo">Stable difusion running in browser</a></li>
+<li><a href="https://github.com/jobergum/browser-ml-inference?tab=readme-ov-file">Text emotion prediction in browser</a></li>
+<li><a href="https://github.com/ggerganov/llama.cpp">Llama c++</a></li>
+<li><a href="https://webllm.mlc.ai/">Web LLM</a></li>
+<li><a href="https://hyuto.github.io/yolov5-onnxruntime-web/">YOLO in the browser</a></li>
+</ul>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure class=" img-small">
+
+    <div>
+        <img loading="lazy" alt="yolo in the browser" src=" /images/yolo_browser.png#small">
+    </div>
+
+    
+</figure></p>
+<h3 id="edge-computing">Edge Computing</h3>
+<p>This movement is part of the larger <a href="https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/">Edge computing</a> trend, which focuses on bringing computing as close to the source as possible, to reduce latency. The demand for edge AI will no doubt grow as consumers become more aware of the privacy issues with processing increasingly personal data in the cloud for their AI services. At <a href="https://machinelearning.apple.com/research/introducing-apple-foundation-models">WWDC 24&rsquo;</a>, Apple put a focus on user privacy, and on-device intelligence- to make this possible we need much smaller models.</p>
+<h3 id="webgpu">WebGPU</h3>
+<p>Announced as the succesor to WebGL in 2021, WebGPU allows webpages to utilise a device&rsquo;s GPU, unlocking much more power for modern applications. Although only a handful of browsers support it currently (Chrome Canary, Firefox-latest), it promises to expedite the Edge AI movement.</p>
+<p>WebGPU can be used with <a href="https://webassembly.org/">WASM</a> (Web Assembly) for fast, high performance applications in the browser. WASM can be built from languages like C/C++, Rust and many others. Compiling ML models for WASM, we can acheive performance close to native GPU:</p>
+<p><div style="display: flex; justify-content: center;">
+    <p style="text-align: center; font-size: small; color: gray;">
+        Using Apache TVM, <a href="https://tvm.apache.org/2020/05/14/compiling-machine-learning-to-webassembly-and-webgpu">there isn&rsquo;t much loss vs running on GPU natively:</a>
+    </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure class=" img-smaller">
+
+    <div>
+        <img loading="lazy" alt="webgpu performance is similar to native" src=" /images/webgpu_comparison.png#smaller">
+    </div>
+
+    
+</figure></p>
+<div style="display: flex; justify-content: center;">
+    <p style="text-align: center; font-size: small; color: gray;">
+        
+    </p>
+</div>
+<style type="text/css">
+    .notice {
+        --root-color: #444;
+        --root-background: #eff;
+        --title-color: #fff;
+        --title-background: #7bd;
+        --warning-title: #c33;
+        --warning-content: #fee;
+        --info-title: #fb7;
+        --info-content: #fec;
+        --note-title: #6be;
+        --note-content: #e7f2fa;
+        --tip-title: #5a5;
+        --tip-content: #efe
+    }
+
+    @media (prefers-color-scheme:light) {
+        .notice {
+            --root-color: #ddd;
+            --root-background: #eff;
+            --title-color: #fff;
+            --title-background: #7bd;
+            --warning-title: #800;
+            --warning-content: #400;
+            --info-title: #a50;
+            --info-content: #420;
+            --note-title: #069;
+            --note-content: #023;
+            --tip-title: #363;
+            --tip-content: #121
+        }
+    }
+
+    body.dark .notice {
+        --root-color: #ddd;
+        --root-background: #eff;
+        --title-color: #fff;
+        --title-background: #7bd;
+        --warning-title: #800;
+        --warning-content: #400;
+        --info-title: #a50;
+        --info-content: #420;
+        --note-title: #069;
+        --note-content: #023;
+        --tip-title: #363;
+        --tip-content: #121
+    }
+
+    .notice {
+        padding: 18px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        color: var(--root-color);
+        background: var(--root-background)
+    }
+
+    .notice p:last-child {
+        margin-bottom: 0
+    }
+
+    .notice-title {
+        margin: -18px -18px 12px;
+        padding: 4px 18px;
+        border-radius: 4px 4px 0 0;
+        font-weight: 700;
+        color: var(--title-color);
+        background: var(--title-background)
+    }
+
+    .notice.warning .notice-title {
+        background: var(--warning-title)
+    }
+
+    .notice.warning {
+        background: var(--warning-content)
+    }
+
+    .notice.info .notice-title {
+        background: var(--info-title)
+    }
+
+    .notice.info {
+        background: var(--info-content)
+    }
+
+    .notice.note .notice-title {
+        background: var(--note-title)
+    }
+
+    .notice.note {
+        background: var(--note-content)
+    }
+
+    .notice.tip .notice-title {
+        background: var(--tip-title)
+    }
+
+    .notice.tip {
+        background: var(--tip-content)
+    }
+
+    .icon-notice {
+        display: inline-flex;
+        align-self: center;
+        margin-right: 8px
+    }
+
+    .icon-notice img,
+    .icon-notice svg {
+        height: 1em;
+        width: 1em;
+        fill: currentColor
+    }
+
+    .icon-notice img,
+    .icon-notice.baseline svg {
+        top: .125em;
+        position: relative
+    }
+</style><div class="notice tip" >
+    <p class="notice-title">
+        <span class="icon-notice baseline">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="300.5 134 300 300">
+  <path d="M551.281 252.36c0-3.32-1.172-6.641-3.515-8.985l-17.774-17.578c-2.344-2.344-5.469-3.711-8.789-3.711-3.32 0-6.445 1.367-8.789 3.71l-79.687 79.493-44.141-44.14c-2.344-2.344-5.469-3.712-8.79-3.712-3.32 0-6.444 1.368-8.788 3.711l-17.774 17.579c-2.343 2.343-3.515 5.664-3.515 8.984 0 3.32 1.172 6.445 3.515 8.789l70.704 70.703c2.343 2.344 5.664 3.711 8.789 3.711 3.32 0 6.64-1.367 8.984-3.71l106.055-106.056c2.343-2.343 3.515-5.468 3.515-8.789ZM600.5 284c0 82.813-67.188 150-150 150-82.813 0-150-67.188-150-150 0-82.813 67.188-150 150-150 82.813 0 150 67.188 150 150Z"/>
+</svg>
+
+        </span>Tip</p><p>Most browsers won&rsquo;t use WebGPU by default (see implementation status <a href="https://github.com/gpuweb/gpuweb/wiki/Implementation-Status">here</a>), so to get the speedup it offers, you should use <a href="https://www.google.com/intl/en_uk/chrome/canary/">Chrome Canary</a> or <a href="https://wiki.mozilla.org/Nightly">Firefox Nightly</a> for the time being.</p></div>
+
+<h3 id="options-for-running-models-in-the-browser">Options for running models in the browser</h3>
+<h5 id="1--tensorflow-js">1- Tensorflow JS</h5>
+<p>The TensorFlow team have a JavaScript libary, that allows you to run pre-trained models in the browser using just pure JS, with relative ease. <a href="https://www.youtube.com/watch?v=5QAO0mKFAKE">Here&rsquo;s a great tutorial showing how to do this made by the team</a></p>
+<p>Although TF-JS doesn&rsquo;t use the WebGPU backend by default, there are <a href="https://stackoverflow.com/questions/58112073/how-to-activate-webgpu-backend-on-tensorflow-js">options to support it</a>.</p>
+<h5 id="2--onnx-web-runtime">2- ONNX Web Runtime</h5>
+<p>The team behind <a href="https://onnx.ai/">ONNX</a>, an open-soruce format for NN models, <a href="https://cloudblogs.microsoft.com/opensource/2021/09/02/onnx-runtime-web-running-your-machine-learning-model-in-browser/">leverage WASM and WebGPU</a> to run models in any format (PyTorch, TF, ONNX) in the browser. See a great tutorial to build a Next.JS app for object classification with ONNX Web Runtime <a href="https://onnxruntime.ai/docs/tutorials/web/classify-images-nextjs-github-template.html">here</a>.</p>
+<h5 id="3--pure-wasm--webgpu">3- Pure WASM + WebGPU</h5>
+<p>Using Rust or C/C++ bindings, it would be possible to implement ML models written in pure shader language, although this would quite hard, and not at all feasible for complex models.</p>
+<p>The Apache TVM (a compiler for NN models) is making efforts to <a href="https://github.com/apache/incubator-tvm/tree/master/rust">support rust</a>, and there is the <a href="https://github.com/ggerganov/ggml">ggml</a> ML libary, written in c. Rust also has a <code>wgpu</code> libary for working with WebGPU.</p>
+<p>This technology is still in its infancy, but is very promising, and I&rsquo;m excited to see where it goes.</p>
+<h4 id="quick-example">Quick Example</h4>
+<p>Here&rsquo;s how you can get a quick example project up and running. Note that you should navigate to <code>localhost:3000/</code> on a supported browser to see the project.</p>
+<pre tabindex="0"><code>git clone https://github.com/microsoft/onnxruntime-nextjs-template.git
+cd onnxruntime-nextjs-template
+export NODE_OPTIONS=--openssl-legacy-provider; npm run dev
+</code></pre><h3 id="sources--further-reading">Sources / Further Reading:</h3>
+<p><a href="https://wasm-game-of-life.shalzz.vercel.app/">Rust+WebAssembly- Game of Life</a>
+(not web gpu but cool)</p>
+<ul>
+<li><a href="https://rustwasm.github.io/book/game-of-life/hello-world.html">Tutorial on this here</a></li>
+</ul>
+<p><a href="https://blog.logrocket.com/webgpu-accelerate-ml-workloads-browser/">How to use webgpu to run a classification model</a></p>
+<p><a href="https://lablab.ai/tech/webgpu">WebGPU basics for AI</a></p>
+<p><a href="https://webgpu.github.io/webgpu-samples/?sample=cornell">WebGPU examples</a></p>
+<p><a href="https://darienbrito.com/2019/07/20/machine-learning-in-shaders-2-shallow-neural-network/">ML in shaders - shallow NN</a></p>
+<p><a href="https://alain.xyz/blog/raw-webgpu">Good WebGPU typescript tutorial</a></p>
+<p><a href="https://cohost.org/mcc/post/1406157-i-want-to-talk-about-webgpu">WebGPU context and languages</a></p>
+<p><a href="https://sotrh.github.io/learn-wgpu/#why-rust">Rust wgpu tutorial</a></p>
+<p><a href="https://github.com/jobergum/browser-ml-inference?tab=readme-ov-file">Text emotion prediction in browser</a></p>
+<p><a href="https://bergum.medium.com/moving-ml-inference-from-the-cloud-to-the-edge-d6f98dbdb2e3">ML inference on the edge</a></p>
+<p><a href="https://onnxruntime.ai/docs/tutorials/web/classify-images-nextjs-github-template.html">Tutorial: Classifier using ONNX web runtime</a></p>
+
+    
+  </div>
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      <p>Powered by
+    <a href="https://gohugo.io/">Hugo</a>
+    and
+    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+</p>
+
+
+    </footer>
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>

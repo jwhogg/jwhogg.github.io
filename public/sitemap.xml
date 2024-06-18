@@ -3,18 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/articles/</loc>
-    <lastmod>2024-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/guides/</loc>
-    <lastmod>2024-06-12T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/articles/ml_inference_browser/</loc>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/machine-learning/</loc>
-    <lastmod>2024-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/research/</loc>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/webgpu/</loc>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/guides/</loc>
     <lastmod>2024-06-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/word2vec/</loc>
