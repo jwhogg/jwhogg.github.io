@@ -13,7 +13,7 @@
       <link>http://localhost:1313/articles/ml_inference_browser/</link>
       <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/ml_inference_browser/</guid>
-      <description>Recently, I stumbled across a guy who ported OpenAI&amp;rsquo;s Whisper model into c++, in various sizes, allowing the model to be run on-device, at impressive speed.&#xA;(source) I went down a rabbit-hole, and found a whole family of popular models that had been ported to work on-device, from the browser:&#xA;Stable difusion running in browser Text emotion prediction in browser Llama c++ Web LLM YOLO in the browser Edge Computing This movement is part of the larger Ddge computing trend, which focuses on bringing computing as close to the source as possible, to reduce latency.</description>
+      <description>Recently, I stumbled across a guy who ported OpenAI&amp;rsquo;s Whisper model into c++, in various sizes, allowing the model to be run on-device, at impressive speed.&#xA;(source) {{ youtube TCMdywaJ9iY}} I went down a rabbit-hole, and found a whole family of popular models that had been ported to work on-device, from the browser:&#xA;Stable difusion running in browser Text emotion prediction in browser Llama c++ Web LLM YOLO in the browser Edge Computing This movement is part of the larger Edge computing trend, which focuses on bringing computing as close to the source as possible, to reduce latency.</description>
     </item>
   </channel>
 </rss>

@@ -11,8 +11,8 @@ showTags: false
 
 Recently, I stumbled across a [guy who ported](https://whisper.ggerganov.com/) OpenAI's [Whisper](https://github.com/openai/whisper) model into c++, in various sizes, allowing the model to be run on-device, at impressive speed.
 
-{{< greycaption >}} [(source)](https://github.com/ggerganov/whisper.cpp) {{< /greycaption >}}
-![whisper running on iphone](/images/whisper_iphone.gif#smaller)
+<!-- {{< greycaption >}} [(source)](https://github.com/ggerganov/whisper.cpp) {{< /greycaption >}} -->
+<!-- ![whisper running on iphone](/images/whisper_iphone.gif#smaller) -->
 
 I went down a rabbit-hole, and found a whole family of popular models that had been ported to work on-device, from the browser:
 * [Stable difusion running in browser](https://websd.mlc.ai/#text-to-image-generation-demo)
@@ -21,7 +21,7 @@ I went down a rabbit-hole, and found a whole family of popular models that had b
 * [Web LLM](https://webllm.mlc.ai/)
 * [YOLO in the browser](https://hyuto.github.io/yolov5-onnxruntime-web/)
 
-![yolo in the browser](/images/yolo_browser.png#small)
+![yolo in the browser](/images/yolo_browser.png#smaller)
 
 ### Edge Computing
 This movement is part of the larger [Edge computing](https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/) trend, which focuses on bringing computing as close to the source as possible, to reduce latency. The demand for edge AI will no doubt grow as consumers become more aware of the privacy issues with processing increasingly personal data in the cloud for their AI services. At [WWDC 24'](https://machinelearning.apple.com/research/introducing-apple-foundation-models), Apple put a focus on user privacy, and on-device intelligence- to make this possible we need much smaller models.
