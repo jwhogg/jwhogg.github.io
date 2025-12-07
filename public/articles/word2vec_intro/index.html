@@ -78,7 +78,7 @@
         
         
         <div class="social-icons">
-            <a href="www.linkedin.com/in/joel-w-hogg" target="_blank"
+            <a href="https://www.linkedin.com/in/joel-w-hogg/" target="_blank"
             rel="noopener noreferrer me"
             title="Linkedin">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -168,11 +168,11 @@
 
   <div class="single-content">
     <p>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.</p>
-<div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        These 2 papers introduced word2vec to the world back in 2013:
-    </p>
-</div>
+<span class="text-gray-500 text-sm">
+  
+These 2 papers introduced word2vec to the world back in 2013: 
+</span>
+
 <table>
 <thead>
 <tr>
@@ -224,22 +224,20 @@
 </thead>
 <tbody>
 <tr>
-<td><div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        <a href="https://arxiv.org/pdf/1301.3781">Word2Vec Paper 1</a>- introducing CBOW and Skip-Gram
-    </p>
-</div></td>
-<td><div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        <a href="https://arxiv.org/pdf/1310.4546">Word2Vec Paper 2</a>- Performance Improvements
-    </p>
-</div></td>
+<td><span class="text-gray-500 text-sm">
+  [Word2Vec Paper 1](https://arxiv.org/pdf/1301.3781)- introducing CBOW and Skip-Gram
+</span>
+</td>
+<td><span class="text-gray-500 text-sm">
+  [Word2Vec Paper 2](https://arxiv.org/pdf/1310.4546)- Performance Improvements
+</span>
+</td>
 </tr>
 </tbody>
 </table>
 <h3 id="motivation">Motivation</h3>
 <p>For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically. For example, let&rsquo;s look at the popular <a href="https://huggingface.co/datasets/stanfordnlp/imdb/viewer/plain_text/train">IMDB dataset</a>, which gives reviews in one column, and a binary sentiment label in the next:</p>
-<!-- raw HTML omitted -->
+<!-- <img src="/images/imdb.png" alt="IMDB dataset"/> -->
 <p>
 
 
@@ -278,16 +276,17 @@ Neural Networks accept vectors, so we need a way to represent these strings as s
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>array_shape: (400,)
 </span></span></code></pre></div><p>The famous example given in the paper is that using vector math with the final embeddings, you could do something like: $\vec{King} - \vec{Man} + \vec{Woman} = \vec{Queen}$. In reality, the resultant vector may not line up exactly with $\vec{Queen}$, but Queen should be the closest vector using <a href="https://medium.com/@milana.shxanukova15/cosine-distance-and-cosine-similarity-a5da0e4d9ded">cosine distance</a>.</p>
-<div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        see <a href="https://www.youtube.com/watch?v=FJtFZwbvkI4">here</a> for a great explination from 3b1b on how vectors can encode meaning.
-    </p>
-</div>
+<span class="text-gray-500 text-sm">
+  
+see [here](https://www.youtube.com/watch?v=FJtFZwbvkI4) for a great explination from 3b1b on how vectors can encode meaning.
+
+</span>
+
 <p><strong>&lsquo;Closeness&rsquo;</strong>: If every word is a vector, &lsquo;closeness&rsquo; between any 2 words (vectors) can be defined as a dot-product of those vectors being close to 1.</p>
 <p><strong>Distributional similarity</strong>- representing a word by means of its neighbors. For a word, its meaning must be encoded by all of the words that are near it in every context. For example, if we look for the word &lsquo;banking&rsquo; across a massive corpus of text, and note all the words nearby, these words must somehow encode the meaning of &lsquo;banking&rsquo;.</p>
 <h2 id="how-word2vec-encodes-words">How Word2Vec encodes words</h2>
 <p>Now we understand why we need to encode words as dense vectors that embed meaning, we can jump in to how word2vec accomplishes this. The paper establishes 2 &lsquo;fake&rsquo; tasks that get the model to learn embeddings:</p>
-<!-- raw HTML omitted -->
+<!-- <img src="/images/cbow_skipgram.png" alt="word2vec paper 1" width="80%"> -->
 <p>
 
 
@@ -338,11 +337,10 @@ Neural Networks accept vectors, so we need a way to represent these strings as s
 
     
 </figure>
-<div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        A matrix-focused view of the model architecture, imagine data flowing left-&gt;right
-    </p>
-</div>
+<span class="text-gray-500 text-sm">
+   A matrix-focused view of the model architecture, imagine data flowing left->right 
+</span>
+
 With the above representation of our word2vec model, the matrix $w_{1}$ (representing weights for the input -&gt; hidden layer) <strong>is actually the embeddings table for our words!</strong> This is the &lsquo;synthetic task&rsquo; that we have been training for, where the real goal is actually getting good embedding vectors.</p>
 <p>
 
@@ -366,11 +364,10 @@ With the above representation of our word2vec model, the matrix $w_{1}$ (represe
 
     
 </figure>
-<div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        credit: Chris McCormik
-    </p>
-</div></p>
+<span class="text-gray-500 text-sm">
+  credit: Chris McCormik
+</span>
+</p>
 <h3 id="softmax-activation">Softmax activation</h3>
 <p>Although later word2vec papers go on to describe the more efficient <a href="https://paperswithcode.com/method/hierarchical-softmax">hierarchical softmax</a>, we will focus just on how softmax helps us clarify which word the network is predicting.</p>
 <p>$$  \text{Softmax}(x_{i}) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}  $$</p>
@@ -396,16 +393,17 @@ With the above representation of our word2vec model, the matrix $w_{1}$ (represe
 
     
 </figure>
-<div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        Where the softmax gets applied (imagine data flow left-&gt;right)
-    </p>
-</div></p>
+<span class="text-gray-500 text-sm">
+  Where the softmax gets applied (imagine data flow left->right)
+</span>
+</p>
 <p>The <a href="https://en.wikipedia.org/wiki/Softmax_function">softmax activation</a> can take a vector of numbers, and maps each number to between $[0,1]$, where the sum of the vector will always add up to 1. From this, we can find our model&rsquo;s prediction by getting the element with the highest number.</p>
 <h2 id="training">Training</h2>
 <p>Using a context window, we can generate pairs for the model in the form: <strong>(TARGET,CONTEXT)</strong></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- <div style="text-align: center;">
+    <img src="/images/ogresonions1.png" alt="ogres are like onions" width="80%">
+    <p style="font-size: small; color: gray;">Where the softmax gets applied (imagine data flow left->right)</p>
+</div> -->
 <p>
 
 
@@ -431,9 +429,10 @@ With the above representation of our word2vec model, the matrix $w_{1}$ (represe
 <p>Becomes the following pairs:</p>
 <pre tabindex="0"><code>(onions,ogres), (onions,are), (onions,like), (onions,they), (onions,have), (onions,layers)
 </code></pre><p>And using the next target word:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- <div style="text-align: center;">
+    <img src="/images/onionsogres2.png" alt="ogres are like onions" width="80%">
+    <p style="font-size: small; color: gray;">Let's assume our corpus ends at 'layers', otherwise with context = 3 there would be another word on the right</p> -->
+<!-- </div> -->
 <p>
 
 
@@ -456,11 +455,10 @@ With the above representation of our word2vec model, the matrix $w_{1}$ (represe
 
     
 </figure>
-<div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        Let&rsquo;s assume our corpus ends at &rsquo;layers&rsquo;, otherwise with context = 3 there would be another word on the right
-    </p>
-</div></p>
+<span class="text-gray-500 text-sm">
+  Let's assume our corpus ends at 'layers', otherwise with context = 3 there would be another word on the right
+</span>
+</p>
 <p>Becomes these pairs:</p>
 <pre tabindex="0"><code>(they,ogres), (they,are), (they,like), (they,onions), (they,have), (they,layers)
 </code></pre><p>Using a training pair, $(Y,X)$ (both one-hot encoded), the model will get passed $X$, and have its output compared against $Y$ to learn from.</p>

@@ -1,5 +1,6 @@
 ---
 title: Homepage
+draft: false
 ---
 
 # Hi, I'm Joel 👋
@@ -11,15 +12,16 @@ title: Homepage
 
 **Welcome to my digital garden!**
 
+<!-- NOTE TO SELF, UPDATE ABOUT FROM HUGO.TOML NOT HERE -->
 
 <div style="display: flex;">
     <div style="width: 50%; padding: 0px;">
         <p>This is a space for me to post notes, research, and longer articles on a varitey of subjects- mostly keeping within tech.
         </p>
-        <p>Recently, I'm challenging myself to learn rust, using techniques from [Ultralearning](https://www.scotthyoung.com/blog/ultralearning/). So far, I've completed 42/96 problems from the [🦀 Rustlings](https://github.com/rust-lang/rustlings) problem set. Rust is a facinating language, and I'm really excited about the speed-up it can bring to production ML.
+        <p>I'm a PhD student at the University of Sheffield, researching applying Causal Inference to Manufacturing. Currently, I'm developing [why-rs](https://github.com/jwhogg/why-rs), a Rust library for Causal Inference and Causal Discovery.
         </p>
         <p>
-        I'm also learning about [WebGPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API), a performant API that lets web browser applications get near-native speeds by providing access to the GPU. This is a cutting-edge technology, and I think it has really big ramifications for on-deivce ML. I wrote an article introducing AI in the browser- you can read it [here](https://jwhogg.github.io/articles/ml_inference_browser/).
+        In the future, I hope to post some blogs about Causal Inference research as a learn more.
         </p>
     </div>
     <div style="width: 50%; padding: 0px;">

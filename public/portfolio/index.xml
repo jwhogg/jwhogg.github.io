@@ -6,14 +6,28 @@
     <description>Recent content in Portfolio on jwhogg</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>why-rs: A Causal Inference Library in Rust</title>
+      <link>http://localhost:1313/portfolio/portfolio6/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/portfolio6/</guid>
+      <description>Github🔗&#xA;An under-development project, where I&amp;rsquo;m trying to build out a Causal Inference library in Rust. I found there wasn&amp;rsquo;t much in the way of CI libraries in Rust, and I was underwhelemed with the level of support for the ones I&amp;rsquo;ve used in Python, so I decided to try and build my own, which I hope to make use of throughout my PhD and extend to suit my purposes.</description>
+    </item>
+    <item>
+      <title>Radial Chess</title>
+      <link>http://localhost:1313/portfolio/portfolio5/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/portfolio5/</guid>
+      <description>Github- Back end 🔗 Github- Front end 🔗 Demo Inspired by the heorics of lichess.org&amp;rsquo;s single developer, I decided to try to create a similar web-based online chess app, with matchmaking. The main goal of this project is to use my knowledge of system design to make a robust and scalable app that could theoretically handle a large number of users. This involves knowlege of infastructure tools, and overcoming dificulties such as scaling a Web-Socket app (hint: you will need sticky sessions for your load-balancer!</description>
+    </item>
     <item>
       <title>Budgeting App</title>
       <link>http://localhost:1313/portfolio/portfolio3/</link>
       <pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portfolio/portfolio3/</guid>
-      <description>Github 🔗&#xA;On ongoing project of mine, taking inspriation from Monzo&amp;rsquo;s budgeting burndown feature. I&amp;rsquo;m building this web app with Ruby-on-Rails, and using the GoCardless API to handle linking user&amp;rsquo;s bank accounts to the app securely.&#xA;The inspiration for the project: monzo&amp;rsquo;s &amp;rsquo;targets&amp;rsquo; tab. So far, I am building the MVP, and have implemented functionality to link a bank account with the app, and to store the user&amp;rsquo;s key to access their bank account data using server-side sessions, which are much more secure than cookies sesion storage.</description>
+      <description>Github 🔗&#xA;On ongoing project of mine, taking inspriation from Monzo&amp;rsquo;s budgeting burndown feature. I&amp;rsquo;m building this web app with Ruby-on-Rails, and using the GoCardless API to handle linking user&amp;rsquo;s bank accounts to the app securely.&#xA;The inspiration for the project: monzo&#39;s &#39;targets&#39; tab. So far, I am building the MVP, and have implemented functionality to link a bank account with the app, and to store the user&amp;rsquo;s key to access their bank account data using server-side sessions, which are much more secure than cookies sesion storage.</description>
     </item>
     <item>
       <title>Fine-tuning GPT2-2</title>

@@ -20,7 +20,7 @@
       <link>http://localhost:1313/articles/word2vec_intro/</link>
       <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/word2vec_intro/</guid>
-      <description>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.&#xA;These 2 papers introduced word2vec to the world back in 2013: Word2Vec Paper 1- introducing CBOW and Skip-Gram Word2Vec Paper 2- Performance Improvements Motivation For many NLP tasks, we need to learn on data which can&amp;rsquo;t be easily represented numerically.</description>
+      <description>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.&#xA;These 2 papers introduced word2vec to the world back in 2013: [Word2Vec Paper 1](https://arxiv.org/pdf/1301.3781)- introducing CBOW and Skip-Gram [Word2Vec Paper 2](https://arxiv.</description>
     </item>
     <item>
       <title>Implementing Word2Vec in python</title>
@@ -37,11 +37,11 @@
       <description>We will be using a 🤗 HuggingFace model (GPT-2 Medium)&#xA;📙Jupyter Notebook Link&#xA;Create train/test split for custom dataset (can use sklearn for this)&#xA;Get the model tokeniser from transformers import AutoTokenizer tokenizer = AutoTokenizer.from_pretrained(&amp;#34;your-model-here&amp;#34;) #eg &amp;#34;bert-base-cased&amp;#34; Create encodings for train/test using tokeniser def tokenize_function(examples): return tokenizer(examples[&amp;#34;text&amp;#34;], padding=&amp;#34;max_length&amp;#34;, truncation=True) tokenized_datasets = raw_datasets.map(tokenize_function, batched=True) # where raw_datasets is a dict with train/dev/test we need padding as the inputs must fit the models input even if they are too short Create small datasets for development small_train_dataset = tokenized_datasets[&amp;#34;train&amp;#34;].</description>
     </item>
     <item>
-      <title>Notes on: Getting an ML job</title>
+      <title>Notes on: Applying for jobs within tech/ML</title>
       <link>http://localhost:1313/articles/getting_an_ml_jpb/</link>
       <pubDate>Thu, 23 May 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/getting_an_ml_jpb/</guid>
-      <description>Summary of this article / video&#xA;Intro can split getting an ML job into 2 steps: Getting ML skills building projects contributing to OS reading technical info Marketing ML skills communication interviewing portal creation passing application screening Strategies: Make ML jobs come to you by Learning in Public (great article!) Summary:&#xA;write blogs / tutorials / cheatsheets answer things on stackoverflow / reddit make videos draw cartoons Pull Request libraries you use OS: github repo -&amp;gt; issues -&amp;gt; &amp;lsquo;good first issue&amp;rsquo; (easy ones to solve) make your own libraries intended only for you goto conferences ==&amp;gt; make the thing you wish you had found Info</description>
+      <description>A collection of notes about articles I found useful when applying for jobs. Hopefully these can be of some use to others also.&#xA;Summary of this article / video&#xA;Intro can split getting an ML job into 2 steps: Getting ML skills building projects contributing to OS reading technical info Marketing ML skills communication interviewing portal creation passing application screening Strategies: Make ML jobs come to you by Learning in Public (great article!</description>
     </item>
   </channel>
 </rss>

@@ -78,7 +78,7 @@
         
         
         <div class="social-icons">
-            <a href="www.linkedin.com/in/joel-w-hogg" target="_blank"
+            <a href="https://www.linkedin.com/in/joel-w-hogg/" target="_blank"
             rel="noopener noreferrer me"
             title="Linkedin">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -168,8 +168,11 @@
 
   <div class="single-content">
     <p>Recently, I stumbled across a <a href="https://whisper.ggerganov.com/">guy who ported</a> OpenAI&rsquo;s <a href="https://github.com/openai/whisper">Whisper</a> model into c++, in various sizes, allowing the model to be run on-device, at impressive speed.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- <span class="text-gray-500 text-sm">
+   [(source)](https://github.com/ggerganov/whisper.cpp) 
+</span>
+ -->
+<!-- ![whisper running on iphone](/images/whisper_iphone.gif#smaller) -->
 <p>I went down a rabbit-hole, and found a whole family of popular models that had been ported to work on-device, from the browser:</p>
 <ul>
 <li><a href="https://websd.mlc.ai/#text-to-image-generation-demo">Stable difusion running in browser</a></li>
@@ -205,11 +208,10 @@
 <h3 id="webgpu">WebGPU</h3>
 <p>Announced as the succesor to WebGL in 2021, WebGPU allows webpages to utilise a device&rsquo;s GPU, unlocking much more power for modern applications. Although only a handful of browsers support it currently (Chrome Canary, Firefox-latest), it promises to expedite the Edge AI movement.</p>
 <p>WebGPU can be used with <a href="https://webassembly.org/">WASM</a> (Web Assembly) for fast, high performance applications in the browser. WASM can be built from languages like C/C++, Rust and many others. Compiling ML models for WASM, we can acheive performance close to native GPU:</p>
-<p><div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        Using Apache TVM, <a href="https://tvm.apache.org/2020/05/14/compiling-machine-learning-to-webassembly-and-webgpu">there isn&rsquo;t much loss vs running on GPU natively:</a>
-    </p>
-</div>
+<p><span class="text-gray-500 text-sm">
+   Using Apache TVM, [there isn't much loss vs running on GPU natively:](https://tvm.apache.org/2020/05/14/compiling-machine-learning-to-webassembly-and-webgpu) 
+</span>
+
 
 
 
@@ -232,139 +234,12 @@
 
     
 </figure></p>
-<div style="display: flex; justify-content: center;">
-    <p style="text-align: center; font-size: small; color: gray;">
-        
-    </p>
-</div>
-<style type="text/css">
-    .notice {
-        --root-color: #444;
-        --root-background: #eff;
-        --title-color: #fff;
-        --title-background: #7bd;
-        --warning-title: #c33;
-        --warning-content: #fee;
-        --info-title: #fb7;
-        --info-content: #fec;
-        --note-title: #6be;
-        --note-content: #e7f2fa;
-        --tip-title: #5a5;
-        --tip-content: #efe
-    }
+<span class="text-gray-500 text-sm">
+   
+</span>
 
-    @media (prefers-color-scheme:light) {
-        .notice {
-            --root-color: #ddd;
-            --root-background: #eff;
-            --title-color: #fff;
-            --title-background: #7bd;
-            --warning-title: #800;
-            --warning-content: #400;
-            --info-title: #a50;
-            --info-content: #420;
-            --note-title: #069;
-            --note-content: #023;
-            --tip-title: #363;
-            --tip-content: #121
-        }
-    }
 
-    body.dark .notice {
-        --root-color: #ddd;
-        --root-background: #eff;
-        --title-color: #fff;
-        --title-background: #7bd;
-        --warning-title: #800;
-        --warning-content: #400;
-        --info-title: #a50;
-        --info-content: #420;
-        --note-title: #069;
-        --note-content: #023;
-        --tip-title: #363;
-        --tip-content: #121
-    }
-
-    .notice {
-        padding: 18px;
-        line-height: 24px;
-        margin-bottom: 24px;
-        border-radius: 4px;
-        color: var(--root-color);
-        background: var(--root-background)
-    }
-
-    .notice p:last-child {
-        margin-bottom: 0
-    }
-
-    .notice-title {
-        margin: -18px -18px 12px;
-        padding: 4px 18px;
-        border-radius: 4px 4px 0 0;
-        font-weight: 700;
-        color: var(--title-color);
-        background: var(--title-background)
-    }
-
-    .notice.warning .notice-title {
-        background: var(--warning-title)
-    }
-
-    .notice.warning {
-        background: var(--warning-content)
-    }
-
-    .notice.info .notice-title {
-        background: var(--info-title)
-    }
-
-    .notice.info {
-        background: var(--info-content)
-    }
-
-    .notice.note .notice-title {
-        background: var(--note-title)
-    }
-
-    .notice.note {
-        background: var(--note-content)
-    }
-
-    .notice.tip .notice-title {
-        background: var(--tip-title)
-    }
-
-    .notice.tip {
-        background: var(--tip-content)
-    }
-
-    .icon-notice {
-        display: inline-flex;
-        align-self: center;
-        margin-right: 8px
-    }
-
-    .icon-notice img,
-    .icon-notice svg {
-        height: 1em;
-        width: 1em;
-        fill: currentColor
-    }
-
-    .icon-notice img,
-    .icon-notice.baseline svg {
-        top: .125em;
-        position: relative
-    }
-</style><div class="notice tip" >
-    <p class="notice-title">
-        <span class="icon-notice baseline">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="300.5 134 300 300">
-  <path d="M551.281 252.36c0-3.32-1.172-6.641-3.515-8.985l-17.774-17.578c-2.344-2.344-5.469-3.711-8.789-3.711-3.32 0-6.445 1.367-8.789 3.71l-79.687 79.493-44.141-44.14c-2.344-2.344-5.469-3.712-8.79-3.712-3.32 0-6.444 1.368-8.788 3.711l-17.774 17.579c-2.343 2.343-3.515 5.664-3.515 8.984 0 3.32 1.172 6.445 3.515 8.789l70.704 70.703c2.343 2.344 5.664 3.711 8.789 3.711 3.32 0 6.64-1.367 8.984-3.71l106.055-106.056c2.343-2.343 3.515-5.468 3.515-8.789ZM600.5 284c0 82.813-67.188 150-150 150-82.813 0-150-67.188-150-150 0-82.813 67.188-150 150-150 82.813 0 150 67.188 150 150Z"/>
-</svg>
-
-        </span>Tip</p><p>Most browsers won&rsquo;t use WebGPU by default (see implementation status <a href="https://github.com/gpuweb/gpuweb/wiki/Implementation-Status">here</a>), so to get the speedup it offers, you should use <a href="https://www.google.com/intl/en_uk/chrome/canary/">Chrome Canary</a> or <a href="https://wiki.mozilla.org/Nightly">Firefox Nightly</a> for the time being.</p></div>
+Most browsers won't use WebGPU by default (see implementation status [here](https://github.com/gpuweb/gpuweb/wiki/Implementation-Status)), so to get the speedup it offers, you should use [Chrome Canary](https://www.google.com/intl/en_uk/chrome/canary/) or [Firefox Nightly](https://wiki.mozilla.org/Nightly) for the time being.
 
 <h3 id="options-for-running-models-in-the-browser">Options for running models in the browser</h3>
 <h5 id="1--tensorflow-js">1- Tensorflow JS</h5>

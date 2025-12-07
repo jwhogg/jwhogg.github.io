@@ -8,7 +8,7 @@
 
 <title>
     
-    Fine-tuning GPT2-2 | jwhogg
+    Radial Chess | jwhogg
     
 </title>
 
@@ -128,7 +128,7 @@
     <a href="/portfolio/">Portfolio</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/portfolio/portfolio4/">Fine-tuning GPT2-2</a>
+    <a class="breadcrumbs-current" href="/portfolio/portfolio5/">Radial Chess</a>
 </div>
 
 
@@ -138,7 +138,7 @@
 
     
 
-    <h1 class="single-title">Fine-tuning GPT2-2</h1>
+    <h1 class="single-title">Radial Chess</h1>
     
 
     
@@ -147,7 +147,7 @@
       
       
       
-      <time datetime="2024-06-04T00:00:00&#43;00:00">June 4, 2024</time>
+      <time datetime="2024-12-01T00:00:00&#43;00:00">December 1, 2024</time>
       
 
       
@@ -164,8 +164,40 @@
   
 
   <div class="single-content">
-    <p><a href="https://github.com/jwhogg/GPT-2-Fine-Tuning/tree/main">Github 🔗</a></p>
-<p>A brief jupyter notebook I made showing how to fine tune a model using the 🤗 Transformers libary. The example I wrote uses the popular CNN/DailyMail dataset.</p>
+    <ul>
+<li><a href="https://github.com/jwhogg/Radial-Chess-Backend">Github- Back end 🔗</a></li>
+<li><a href="https://github.com/jwhogg/Radial-Chess-Frontend">Github- Front end 🔗</a></li>
+</ul>
+<img width="60%" alt="Screenshot 2024-10-25 at 14 31 29" src="https://github.com/user-attachments/assets/eeb29645-a658-4d88-ac06-09dfc15afd10">
+<h2 id="demo">Demo</h2>
+<img width="60%" alt="Demo of a game" src="https://github.com/user-attachments/assets/65dc3ed1-da70-4d31-a273-349de6703df2">
+<p>Inspired by the <a href="https://www.youtube.com/watch?v=7VSVfQcaxFY">heorics</a> of lichess.org&rsquo;s single developer, I decided to try to create a similar web-based online chess app, with matchmaking. The main goal of this project is to use my knowledge of system design to make a robust and scalable app that could theoretically handle a large number of users. This involves knowlege of infastructure tools, and overcoming dificulties such as scaling a Web-Socket app (hint: you will need sticky sessions for your load-balancer!).</p>
+<p>Another goal of this project was to put to use my Rust knowledge, I&rsquo;d been learning in my spare time and wanted to try and integrate what I knew into something practical.</p>
+<h2 id="back-end-technologies">Back-end Technologies</h2>
+<ul>
+<li><a href="https://www.rust-lang.org/">Rust 🦀</a> for the entire back-end</li>
+<li><a href="https://tokio.rs/">tokio</a> and <a href="https://github.com/tokio-rs/axum">axum</a> for async and networking</li>
+<li><a href="https://redis.io/">Redis</a> for scalable state memory</li>
+<li><a href="https://jwt.io/introduction">JSON Web Token</a> for secure authentication</li>
+<li><a href="https://www.mysql.com/">MySQL</a> for storing persistent user data</li>
+</ul>
+<h2 id="front-end-technologies">Front-end Technologies</h2>
+<ul>
+<li><a href="https://vuejs.org/">VueJs</a> for front-end + WebSocket client</li>
+<li><a href="https://www.npmjs.com/package/vue-axios">Vue-axios</a> for API consumption</li>
+<li><a href="https://auth0.com/">Auth0</a> for secure authentication and Single Sign-On (Google accounts)</li>
+<li><a href="https://github.com/qwerty084/vue3-chessboard">Vue3-Chessboard</a> for chess GUI, built on Lichess</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p><em>Note: The project is yet to be hosted as it is under development, but these will be the technologies used:</em></p>
+<ul>
+<li><a href="https://aws.amazon.com/cloudfront/">CloudFront</a> for serving the static site</li>
+<li><a href="https://aws.amazon.com/ec2/">AWS EC2</a> for hosting the back-end servers</li>
+<li><a href="https://www.docker.com/">Docker</a> for containerization</li>
+<li><a href="https://www.f5.com/go/product/welcome-to-nginx">NGINX</a> for load balancing</li>
+<li><a href="https://redis.io/">Redis</a> for state management and pub/sub</li>
+</ul>
+<p><em>Note- this project has since been shelved as I&rsquo;ve had other responsibilities, but I learnt a lot and was glad to be able to deliver a working prototype.</em></p>
 
     
   </div>
