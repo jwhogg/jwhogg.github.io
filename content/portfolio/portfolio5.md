@@ -9,10 +9,14 @@ draft: false
 - [Github- Back end 🔗](https://github.com/jwhogg/Radial-Chess-Backend)
 - [Github- Front end 🔗](https://github.com/jwhogg/Radial-Chess-Frontend)
 
-<img width="60%" alt="Screenshot 2024-10-25 at 14 31 29" src="https://github.com/user-attachments/assets/eeb29645-a658-4d88-ac06-09dfc15afd10">
+<!-- <img width="60%" alt="Screenshot 2024-10-25 at 14 31 29" src="https://github.com/user-attachments/assets/eeb29645-a658-4d88-ac06-09dfc15afd10"> -->
+![Radial Chess UI](/images/radial_chess_ui.png#large)
+{{< greycaption >}}Radial Chess UI{{< /greycaption >}}
 
 ## Demo
-<img width="60%" alt="Demo of a game" src="https://github.com/user-attachments/assets/65dc3ed1-da70-4d31-a273-349de6703df2">
+<!-- <img width="60%" alt="Demo of a game" src="https://github.com/user-attachments/assets/65dc3ed1-da70-4d31-a273-349de6703df2"> -->
+![Radial Chess Demo](/images/radial_chess_game.gif#large)
+{{< greycaption >}}Playing against myself{{< /greycaption >}}
 
 Inspired by the [heorics](https://www.youtube.com/watch?v=7VSVfQcaxFY) of lichess.org's single developer, I decided to try to create a similar web-based online chess app, with matchmaking. The main goal of this project is to use my knowledge of system design to make a robust and scalable app that could theoretically handle a large number of users. This involves knowlege of infastructure tools, and overcoming dificulties such as scaling a Web-Socket app (hint: you will need sticky sessions for your load-balancer!).
 
