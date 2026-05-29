@@ -1,7 +1,6 @@
 ---
 title: 'Notes on: Applying for jobs within tech/ML'
 date: 2024-05-23T13:07:04+01:00
-date: "2024-05-23"
 draft: false
 readTime: true
 toc: true

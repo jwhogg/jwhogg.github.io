@@ -2,13 +2,12 @@ baseURL = "https://example.org/"
 languageCode = "en-us"
 title = "jwhogg"
 # theme = ["hugo-notice", "cactus"]
-theme = ["typo", "hugo-notice"]
+theme = "shibui"
 
 
 [params]
 # Meta description
 description = "Joel's Personal Website"
-gtm_id = "G-VHFF3CGGEV"
 
 # Appearance settings
 theme = 'light'
@@ -55,22 +54,20 @@ url = "https://github.com/jwhogg"
 name = "email"
 url = "mailto:joelhogg45@gmail.com"
 
-# Main menu pages
-[[params.menu]]
+[[menus.main]]
 name = "home"
-url = "/"
+pageRef = "/"
+weight = 10
 
-[[params.menu]]
+[[menus.main]]
 name = "articles"
-url = "/articles"
+pageRef = "/articles"
+weight = 20
 
-# [[params.menu]]
-# name = "about"
-# url = "/about"
-
-[[params.menu]]
+[[menus.main]]
 name = "portfolio"
-url = "/portfolio"
+pageRef = "/portfolio"
+weight = 30
 
 # Syntax highligth on code blocks
 [markup]

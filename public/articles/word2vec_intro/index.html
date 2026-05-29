@@ -1,264 +1,195 @@
-<!DOCTYPE html>
-<html lang="en-us"
-  dir="ltr">
-
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width"><meta name="description" content="" />
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <title>
-    
-    Word2Vec Overview | jwhogg
-    
+  Word2Vec Overview | jwhogg
 </title>
+<meta
+  name="description"
+  content="Joel&#39;s Personal Website"
+/> 
+<link rel="canonical" href="http://localhost:1313/articles/word2vec_intro/" />
 
 
-
-
-
-
-
-<link rel="stylesheet" href="/assets/combined.min.020f42c86d32ba80b53d3fc40ff0090ec5f74817ba9a0391ba123948ca68c7fc.css" media="all">
-
-
-
-
-
-
-
+<meta property="og:title" content="Word2Vec Overview" />
+<meta
+  property="og:description"
+  content="Joel&#39;s Personal Website"
+/>
+<meta
+  property="og:type"
+  content="article"
+/>
+<meta property="og:url" content="http://localhost:1313/articles/word2vec_intro/" />
+ 
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Word2Vec Overview" />
+<meta
+  name="twitter:description"
+  content="Joel&#39;s Personal Website"
+/>      
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Word2Vec Overview",
+    "url": "http:\/\/localhost:1313\/articles\/word2vec_intro\/",
+    "datePublished": "2024-06-12T00:00:00Z",
+    "dateModified": "2024-06-12T00:00:00Z",
+    "description": "Joel\u0027s Personal Website"
+  }
+</script>
+ <link rel="apple-touch-icon" sizes="57x57" href="/favicon_io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicon_io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicon_io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicon_io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicon_io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicon_io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicon_io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicon_io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/favicon_io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon_io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/favicon_io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/favicon_io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+ 
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/custom.css">
 
 
   </head>
-
-  
-
-  
-  
-  
-
-  <body class="light">
-
-    <div class="content">
-      <header>
-        
-
-<div class="header">
-    <h1 class="header-title">jwhogg</h1>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header role="banner"><nav class="path-nav" aria-label="Breadcrumb">
+  <ol>
     
-
-    <div class="flex">
-        
-
-        
-        
-        <p class="small ">
-            <a href="/">
-                /home
-            </a>
-        </p>
-
-        <p>        </p>
-        
-        <p class="small ">
-            <a href="/articles">
-                /articles
-            </a>
-        </p>
-
-        <p>        </p>
-        
-        <p class="small ">
-            <a href="/portfolio">
-                /portfolio
-            </a>
-        </p>
-
-        <p>        </p>
-        
-        
-        
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/joel-w-hogg/" target="_blank"
-            rel="noopener noreferrer me"
-            title="Linkedin">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
-            </a>
-            <a href="https://github.com/jwhogg" target="_blank"
-            rel="noopener noreferrer me"
-            title="Github">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-            </a>
-            <a href="mailto:joelhogg45@gmail.com" target="_blank"
-            rel="noopener noreferrer me"
-            title="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-    <polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-            </a>
-        </div>
+  
     
-    </div>
-
-</div>
-      </header>
-
-      <main class="main">
-        
-
-
-
-
-<div class="breadcrumbs">
+  
     
-    <a href="/">Home</a>
-    <span class="breadcrumbs-separator"> > </span>
+  
+  <li>
+    /
+    <a href="/">jwhogg</a>
+    /
+  </li>
+
+  
+  <li>
     
     <a href="/articles/">Articles</a>
-    <span class="breadcrumbs-separator"> > </span>
+    /
+  </li>
+
+  
+  <li class="current">
     
-    <a class="breadcrumbs-current" href="/articles/word2vec_intro/">Word2Vec Overview</a>
-</div>
-
-
-<div >
-
-  <div class="single-intro-container">
-
+    <a href="/articles/word2vec_intro/">Word2Vec Overview</a>
     
+  </li>
 
-    <h1 class="single-title">Word2Vec Overview</h1>
-    
+  </ol>
+</nav>
 
-    
 
-    <p class="single-readtime">
-      
-      
-      
-      <time datetime="2024-06-12T00:00:00&#43;00:00">June 12, 2024</time>
-      
 
-      
-      &nbsp; · &nbsp;
-      5 min read
-      
-    </p>
-
+</header>
+    <main id="main-content" role="main">
+  <h1>Word2Vec Overview</h1>
+  
+  <div class="terms-list">
+    <ul>
+        <li><a href="/tags/machine-learning/">#Machine Learning</a></li>
+        <li><a href="/tags/word2vec/">#Word2vec</a></li>
+        <li><a href="/tags/guides/">#Guides</a></li>
+    </ul>
   </div>
 
-  
 
   
-
+  
+  
   
 
-  
-
-  <div class="single-content">
-    <p>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.</p>
+   
+   <p>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.</p>
 <span class="text-gray-500 text-sm">
   
 These 2 papers introduced word2vec to the world back in 2013: 
 </span>
 
 <table>
-<thead>
-<tr>
-<th>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure class=" img-smaller">
-
-    <div>
-        <img loading="lazy" alt="paper1" src=" /images/word2vec_paper_1.webp#smaller">
-    </div>
-
+	<thead>
+			<tr>
+					<th><figure>
+  <img
+    src="/images/word2vec_paper_1.webp#smaller"
+    alt="paper1"
+    loading="lazy"
     
-</figure></th>
-<th>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure class=" img-smaller">
-
-    <div>
-        <img loading="lazy" alt="paper2" src=" /images/word2vec_paper_2.webp#smaller">
-    </div>
-
+  />
+  <figcaption>paper1</figcaption>
+  </figure>
+</th>
+					<th><figure>
+  <img
+    src="/images/word2vec_paper_2.webp#smaller"
+    alt="paper2"
+    loading="lazy"
     
-</figure></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="text-gray-500 text-sm">
+  />
+  <figcaption>paper2</figcaption>
+  </figure>
+</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><span class="text-gray-500 text-sm">
   [Word2Vec Paper 1](https://arxiv.org/pdf/1301.3781)- introducing CBOW and Skip-Gram
 </span>
 </td>
-<td><span class="text-gray-500 text-sm">
+					<td><span class="text-gray-500 text-sm">
   [Word2Vec Paper 2](https://arxiv.org/pdf/1310.4546)- Performance Improvements
 </span>
 </td>
-</tr>
-</tbody>
+			</tr>
+	</tbody>
 </table>
-<h3 id="motivation">Motivation</h3>
+
+
+<h3 id="motivation">
+  Motivation
+</h3>
 <p>For many NLP tasks, we need to learn on data which can&rsquo;t be easily represented numerically. For example, let&rsquo;s look at the popular <a href="https://huggingface.co/datasets/stanfordnlp/imdb/viewer/plain_text/train">IMDB dataset</a>, which gives reviews in one column, and a binary sentiment label in the next:</p>
 <!-- <img src="/images/imdb.png" alt="IMDB dataset"/> -->
-<p>
-
-
-
-
-
-
-
-
-
-
-<figure class="">
-
-    <div>
-        <img loading="lazy" alt="imdb" src=" /images/imdb.webp">
-    </div>
-
+<p><figure>
+  <img
+    src="/images/imdb.webp"
+    alt="imdb"
+    loading="lazy"
     
-</figure>
+  />
+  <figcaption>imdb</figcaption>
+  </figure>
+
 Neural Networks accept vectors, so we need a way to represent these strings as such.</p>
-<h4 id="the-old-way">The &lsquo;old&rsquo; way:</h4>
+
+
+<h4 id="the-old-way">
+  The &lsquo;old&rsquo; way:
+</h4>
 <p>We can represent a corpus of words using a <a href="https://en.wikipedia.org/wiki/Bag-of-words_model">Bag-of-Words</a>. For some input text, we can create an unordered &lsquo;bag&rsquo; of the text&rsquo;s vocabulary (set of unique words), and how many count times it appears in the text.</p>
 <p>Raw text:</p>
 <pre tabindex="0"><code>&#34;Ogres are like onions, onions have layers.
@@ -268,11 +199,15 @@ Neural Networks accept vectors, so we need a way to represent these strings as s
 <pre tabindex="0"><code>Onions:  [0,0,1,0,0,0]
 </code></pre><pre tabindex="0"><code>Ogres: [1,0,0,0,0,0]
 </code></pre><p>Although an ML model <em>could</em> learn using this method, it is grossly inefficient: imagine a corpus with a vocabulary (number of unique words) of 100,000. This would mean you would need a combined vector size of 1,000,000 to encode just 10 words, where 99.9% of the vector is empty.</p>
-<h4 id="the-new-way">The &rsquo;new&rsquo; way:</h4>
+
+
+<h4 id="the-new-way">
+  The &rsquo;new&rsquo; way:
+</h4>
 <p>word2vec creates a <strong>distributed representation</strong> of words, which is much more efficient, and allows much a much larger corpus of text to be used in training.</p>
 <p>Each vector is continious and dense, where vectors that are closer have similar meanings. This distributed representation of a large text corpus is our goal, so we can use it in other NLP tasks, and word2vec is how we will accomplish it. Since 2013, there are better ways to do this, such as <a href="https://arxiv.org/abs/1810.04805">BERT</a> and <a href="https://nlp.stanford.edu/projects/glove/">GloVe</a>, which can embed more nuanced relationships between words.</p>
 <p>Dense embedding of &lsquo;Ogre&rsquo;:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>array([ 7.10577386e-01, -5.09895974e-01,  1.71235001e+00,  2.05854094e+00, -4.47590043e-01, -1.00782587e+00, -1.14494191e+00, -7.94087996e-01, -2.22047371e-01,...])
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>array([ 7.10577386e-01, -5.09895974e-01,  1.71235001e+00,  2.05854094e+00, -4.47590043e-01, -1.00782587e+00, -1.14494191e+00, -7.94087996e-01, -2.22047371e-01,...])
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>array_shape: (400,)
 </span></span></code></pre></div><p>The famous example given in the paper is that using vector math with the final embeddings, you could do something like: $\vec{King} - \vec{Man} + \vec{Woman} = \vec{Queen}$. In reality, the resultant vector may not line up exactly with $\vec{Queen}$, but Queen should be the closest vector using <a href="https://medium.com/@milana.shxanukova15/cosine-distance-and-cosine-similarity-a5da0e4d9ded">cosine distance</a>.</p>
@@ -284,148 +219,112 @@ see [here](https://www.youtube.com/watch?v=FJtFZwbvkI4) for a great explination 
 
 <p><strong>&lsquo;Closeness&rsquo;</strong>: If every word is a vector, &lsquo;closeness&rsquo; between any 2 words (vectors) can be defined as a dot-product of those vectors being close to 1.</p>
 <p><strong>Distributional similarity</strong>- representing a word by means of its neighbors. For a word, its meaning must be encoded by all of the words that are near it in every context. For example, if we look for the word &lsquo;banking&rsquo; across a massive corpus of text, and note all the words nearby, these words must somehow encode the meaning of &lsquo;banking&rsquo;.</p>
-<h2 id="how-word2vec-encodes-words">How Word2Vec encodes words</h2>
+
+
+<h2 id="how-word2vec-encodes-words">
+  How Word2Vec encodes words
+</h2>
 <p>Now we understand why we need to encode words as dense vectors that embed meaning, we can jump in to how word2vec accomplishes this. The paper establishes 2 &lsquo;fake&rsquo; tasks that get the model to learn embeddings:</p>
 <!-- <img src="/images/cbow_skipgram.png" alt="word2vec paper 1" width="80%"> -->
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure class=" img-small">
-
-    <div>
-        <img loading="lazy" alt="cbow and skipgram" src=" /images/cbow_skipgram.webp#small">
-    </div>
-
+<p><figure>
+  <img
+    src="/images/cbow_skipgram.webp#small"
+    alt="cbow and skipgram"
+    loading="lazy"
     
-</figure></p>
-<h4 id="continuous-bag-of-words-cbow">Continuous Bag-of-Words (CBOW)</h4>
+  />
+  <figcaption>cbow and skipgram</figcaption>
+  </figure>
+</p>
+
+
+<h4 id="continuous-bag-of-words-cbow">
+  Continuous Bag-of-Words (CBOW)
+</h4>
 <p>The neural network is passed a few context words from around the target word, with the goal of predicting what that target word is.</p>
-<h4 id="skip-gram">Skip-gram</h4>
+
+
+<h4 id="skip-gram">
+  Skip-gram
+</h4>
 <p>The opposite of CBOW, the model is instead passed the middle word, with the goal of predicting the context words around it.</p>
 <p>note: <strong>These words will be passed to the model as one-hot encodings</strong></p>
-<h3 id="retrieving-embeddings">Retrieving embeddings</h3>
-<p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<figure class=" img-medium">
-
-    <div>
-        <img loading="lazy" alt="word2vec network" src=" /images/word2vecnetwork.webp#medium">
-    </div>
-
+<h3 id="retrieving-embeddings">
+  Retrieving embeddings
+</h3>
+<p><figure>
+  <img
+    src="/images/word2vecnetwork.webp#medium"
+    alt="word2vec network"
+    loading="lazy"
     
-</figure>
+  />
+  <figcaption>word2vec network</figcaption>
+  </figure>
+
 <span class="text-gray-500 text-sm">
    A matrix-focused view of the model architecture, imagine data flowing left->right 
 </span>
 
 With the above representation of our word2vec model, the matrix $w_{1}$ (representing weights for the input -&gt; hidden layer) <strong>is actually the embeddings table for our words!</strong> This is the &lsquo;synthetic task&rsquo; that we have been training for, where the real goal is actually getting good embedding vectors.</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure class=" img-smaller">
-
-    <div>
-        <img loading="lazy" alt="the hidden layer is the word vector matrix" src=" /images/hiddenlayeriswordvector.webp#smaller">
-    </div>
-
+<p><figure>
+  <img
+    src="/images/hiddenlayeriswordvector.webp#smaller"
+    alt="the hidden layer is the word vector matrix"
+    loading="lazy"
     
-</figure>
+  />
+  <figcaption>the hidden layer is the word vector matrix</figcaption>
+  </figure>
+
 <span class="text-gray-500 text-sm">
   credit: Chris McCormik
 </span>
 </p>
-<h3 id="softmax-activation">Softmax activation</h3>
+
+
+<h3 id="softmax-activation">
+  Softmax activation
+</h3>
 <p>Although later word2vec papers go on to describe the more efficient <a href="https://paperswithcode.com/method/hierarchical-softmax">hierarchical softmax</a>, we will focus just on how softmax helps us clarify which word the network is predicting.</p>
 <p>$$  \text{Softmax}(x_{i}) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}  $$</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure class=" img-smaller">
-
-    <div>
-        <img loading="lazy" alt="softmax demo" src=" /images/softmax.webp#smaller">
-    </div>
-
+<p><figure>
+  <img
+    src="/images/softmax.webp#smaller"
+    alt="softmax demo"
+    loading="lazy"
     
-</figure>
+  />
+  <figcaption>softmax demo</figcaption>
+  </figure>
+
 <span class="text-gray-500 text-sm">
   Where the softmax gets applied (imagine data flow left->right)
 </span>
 </p>
 <p>The <a href="https://en.wikipedia.org/wiki/Softmax_function">softmax activation</a> can take a vector of numbers, and maps each number to between $[0,1]$, where the sum of the vector will always add up to 1. From this, we can find our model&rsquo;s prediction by getting the element with the highest number.</p>
-<h2 id="training">Training</h2>
+
+
+<h2 id="training">
+  Training
+</h2>
 <p>Using a context window, we can generate pairs for the model in the form: <strong>(TARGET,CONTEXT)</strong></p>
 <!-- <div style="text-align: center;">
     <img src="/images/ogresonions1.png" alt="ogres are like onions" width="80%">
     <p style="font-size: small; color: gray;">Where the softmax gets applied (imagine data flow left->right)</p>
 </div> -->
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure class=" img-small">
-
-    <div>
-        <img loading="lazy" alt="ogres are like onions" src=" /images/ogresonions1.webp#small">
-    </div>
-
+<p><figure>
+  <img
+    src="/images/ogresonions1.webp#small"
+    alt="ogres are like onions"
+    loading="lazy"
     
-</figure></p>
+  />
+  <figcaption>ogres are like onions</figcaption>
+  </figure>
+</p>
 <p>Becomes the following pairs:</p>
 <pre tabindex="0"><code>(onions,ogres), (onions,are), (onions,like), (onions,they), (onions,have), (onions,layers)
 </code></pre><p>And using the next target word:</p>
@@ -433,28 +332,16 @@ With the above representation of our word2vec model, the matrix $w_{1}$ (represe
     <img src="/images/onionsogres2.png" alt="ogres are like onions" width="80%">
     <p style="font-size: small; color: gray;">Let's assume our corpus ends at 'layers', otherwise with context = 3 there would be another word on the right</p> -->
 <!-- </div> -->
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure class=" img-small">
-
-    <div>
-        <img loading="lazy" alt="ogres are like onions" src=" /images/ogresonions2.webp#small">
-    </div>
-
+<p><figure>
+  <img
+    src="/images/ogresonions2.webp#small"
+    alt="ogres are like onions"
+    loading="lazy"
     
-</figure>
+  />
+  <figcaption>ogres are like onions</figcaption>
+  </figure>
+
 <span class="text-gray-500 text-sm">
   Let's assume our corpus ends at 'layers', otherwise with context = 3 there would be another word on the right
 </span>
@@ -462,7 +349,11 @@ With the above representation of our word2vec model, the matrix $w_{1}$ (represe
 <p>Becomes these pairs:</p>
 <pre tabindex="0"><code>(they,ogres), (they,are), (they,like), (they,onions), (they,have), (they,layers)
 </code></pre><p>Using a training pair, $(Y,X)$ (both one-hot encoded), the model will get passed $X$, and have its output compared against $Y$ to learn from.</p>
-<h4 id="distinction-between-cbow-and-skip-gram-training">Distinction between CBOW and Skip-gram training</h4>
+
+
+<h4 id="distinction-between-cbow-and-skip-gram-training">
+  Distinction between CBOW and Skip-gram training
+</h4>
 <p>It&rsquo;s important to make a distinction regarding these pairs for the 2 models, because they <em>are</em> slightly different:</p>
 <ul>
 <li>For Skip-gram, the model would be passed a target word ($Y$), and for output, predicts <strong>all</strong> the words within the context window ($ X_{i-n} $). If we had 10 words in the vocabularly, and a context size 3, this would make the model&rsquo;s output vector shape (6,10)- one row for each context word.</li>
@@ -485,86 +376,39 @@ With the above representation of our word2vec model, the matrix $w_{1}$ (represe
 </li>
 </ul>
 
-    
-  </div>
+   <div class="time">
+     <time datetime="2024-06-12">2024-06-12&nbsp;</time>
+
+     
+     
+       <span class="reading-time"> · 6 min read</span>
+     
+     
+     
+   </div>
 
   
-  <div class="back-to-top">
-    <a href="#top">
-      back to top
-    </a>
-  </div>
   
+    <div class="comments">
 
 </div>
+  
 
-
-      </main>
+  
+    <div class="terminal-nav">
+      <div class="back-nav">
+        
+          <a href="/articles/" class="back-link">../</a>
+        
+      </div>
     </div>
-
-    <footer>
-      <p>Powered by
-    <a href="https://gohugo.io/">Hugo</a>
-    and
-    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+  
+</main>
+    <footer role="contentinfo"><p role="contentinfo">
+  &copy; Copyright 2026 &middot;
+  Made with <a href="https://gohugo.io">Hugo</a> &middot;
+  <a href="https://github.com/ntk148v/shibui">shibui</a> theme
 </p>
-
-
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-<script defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
-
-<script defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
-  onload="renderMathInElement(document.body);"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false }
-      ]
-    });
-  });
-</script>
-
-    </footer>
-
+</footer>
   </body>
-
-  <script>
-
-  function isAuto() {
-    return document.body.classList.contains("auto");
-  }
-
-  function setTheme() {
-    if (!isAuto()) {
-      return
-    }
-
-    document.body.classList.remove("auto");
-    let cls = "light";
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      cls = "dark";
-    }
-
-    document.body.classList.add(cls);
-  }
-
-  function invertBody() {
-    document.body.classList.toggle("dark");
-    document.body.classList.toggle("light");
-  }
-
-  if (isAuto()) {
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
-  }
-
-  setTheme();
-
-</script>
-
 </html>

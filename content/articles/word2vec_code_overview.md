@@ -1,7 +1,6 @@
 ---
 title: 'Implementing Word2Vec in python'
 date: 2024-05-31T17:25:04+01:00
-date: "2024-05-31"
 draft: false
 math: true
 readTime: true

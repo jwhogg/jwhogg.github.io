@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Portfolio on jwhogg</title>
-    <link>http://localhost:1313/portfolio/</link>
-    <description>Recent content in Portfolio on jwhogg</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>why-rs: A Causal Inference Library in Rust</title>
-      <link>http://localhost:1313/portfolio/portfolio6/</link>
-      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio6/</guid>
-      <description>Github🔗&#xA;An under-development project, where I&amp;rsquo;m trying to build out a Causal Inference library in Rust. I found there wasn&amp;rsquo;t much in the way of CI libraries in Rust, and I was underwhelemed with the level of support for the ones I&amp;rsquo;ve used in Python, so I decided to try and build my own, which I hope to make use of throughout my PhD and extend to suit my purposes.</description>
-    </item>
-    <item>
-      <title>Radial Chess</title>
-      <link>http://localhost:1313/portfolio/portfolio5/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio5/</guid>
-      <description>Github- Back end 🔗 Github- Front end 🔗 Demo Inspired by the heorics of lichess.org&amp;rsquo;s single developer, I decided to try to create a similar web-based online chess app, with matchmaking. The main goal of this project is to use my knowledge of system design to make a robust and scalable app that could theoretically handle a large number of users. This involves knowlege of infastructure tools, and overcoming dificulties such as scaling a Web-Socket app (hint: you will need sticky sessions for your load-balancer!</description>
-    </item>
-    <item>
-      <title>Budgeting App</title>
-      <link>http://localhost:1313/portfolio/portfolio3/</link>
-      <pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio3/</guid>
-      <description>Github 🔗&#xA;On ongoing project of mine, taking inspriation from Monzo&amp;rsquo;s budgeting burndown feature. I&amp;rsquo;m building this web app with Ruby-on-Rails, and using the GoCardless API to handle linking user&amp;rsquo;s bank accounts to the app securely.&#xA;The inspiration for the project: monzo&#39;s &#39;targets&#39; tab. So far, I am building the MVP, and have implemented functionality to link a bank account with the app, and to store the user&amp;rsquo;s key to access their bank account data using server-side sessions, which are much more secure than cookies sesion storage.</description>
-    </item>
-    <item>
-      <title>Fine-tuning GPT2-2</title>
-      <link>http://localhost:1313/portfolio/portfolio4/</link>
-      <pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio4/</guid>
-      <description>Github 🔗&#xA;A brief jupyter notebook I made showing how to fine tune a model using the 🤗 Transformers libary. The example I wrote uses the popular CNN/DailyMail dataset.</description>
-    </item>
-    <item>
-      <title>Youtube2Summary</title>
-      <link>http://localhost:1313/portfolio/portfolio1/</link>
-      <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio1/</guid>
-      <description>Github 🔗&#xA;🤗 Pipeline to generate summaries of youtube videos, using Whisper-Small for transcription, and BART-LARGE-XSUM for summarisation.&#xA;BART has been finetuned on the popular CNN/Daily Mail Dataset, as it lends itself to summarisation tasks. Initially, we attempted to fine-tune GPT-2 for the summarisation task, but found it had poor performance: being a generative transfotmer, it generates words one-by-one, (extractive summarisation) whereas BART can generate at the sentence level (using abstractive summarisation).</description>
-    </item>
-    <item>
-      <title>Causal Implicit GAN: Data Augmentation for Causal Discovery</title>
-      <link>http://localhost:1313/portfolio/portfolio2/</link>
-      <pubDate>Tue, 16 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portfolio/portfolio2/</guid>
-      <description>Github 🔗&#xA;My University dissertation research project, where I designed and trained a GAN model for data augmentation (generating new training samples for downstream models). I was very proud to receive a score of 83 on this disseration (high 1st).&#xA;A high-level overview of the CIGAN project The data the GAN generates is intended for use on Causal Discovery models, an area where quality ground-truth datasets are hard to come by- making data augmentation a valuable technique.</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Portfolio on jwhogg</title>
+		<link>http://localhost:1313/portfolio/</link>
+		<description>Recent content in Portfolio on jwhogg</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>why-rs: A Causal Inference Library in Rust</title>
+				<link>http://localhost:1313/portfolio/portfolio6/</link>
+				<pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/portfolio/portfolio6/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://github.com/jwhogg/why-rs&#34;&gt;Github🔗&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;An under-development project, where I&amp;rsquo;m trying to build out a Causal Inference library in Rust. I found there wasn&amp;rsquo;t much in the way of CI libraries in Rust, and&#xA;I was underwhelemed with the level of support for the ones I&amp;rsquo;ve used in Python, so I decided to try and build my own, which I hope to make use of throughout&#xA;my PhD and extend to suit my purposes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Radial Chess</title>
+				<link>http://localhost:1313/portfolio/portfolio5/</link>
+				<pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/portfolio/portfolio5/</guid>
+				<description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/jwhogg/Radial-Chess-Backend&#34;&gt;Github- Back end 🔗&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/jwhogg/Radial-Chess-Frontend&#34;&gt;Github- Front end 🔗&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- &lt;img width=&#34;60%&#34; alt=&#34;Screenshot 2024-10-25 at 14 31 29&#34; src=&#34;https://github.com/user-attachments/assets/eeb29645-a658-4d88-ac06-09dfc15afd10&#34;&gt; --&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img&#xA;    src=&#34;http://localhost:1313/images/radial_chess_ui.png#large&#34;&#xA;    alt=&#34;Radial Chess UI&#34;&#xA;    loading=&#34;lazy&#34;&#xA;    &#xA;  /&gt;&#xA;  &lt;figcaption&gt;Radial Chess UI&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&#xA;&lt;span class=&#34;text-gray-500 text-sm&#34;&gt;&#xA;  Radial Chess UI&#xA;&lt;/span&gt;&#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h2 id=&#34;demo&#34;&gt;&#xA;  Demo&#xA;&lt;/h2&gt;&#xA;&lt;!-- &lt;img width=&#34;60%&#34; alt=&#34;Demo of a game&#34; src=&#34;https://github.com/user-attachments/assets/65dc3ed1-da70-4d31-a273-349de6703df2&#34;&gt; --&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img&#xA;    src=&#34;http://localhost:1313/images/radial_chess_game.gif#large&#34;&#xA;    alt=&#34;Radial Chess Demo&#34;&#xA;    loading=&#34;lazy&#34;&#xA;    &#xA;  /&gt;&#xA;  &lt;figcaption&gt;Radial Chess Demo&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&#xA;&lt;span class=&#34;text-gray-500 text-sm&#34;&gt;&#xA;  Playing against myself&#xA;&lt;/span&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Inspired by the &lt;a href=&#34;https://www.youtube.com/watch?v=7VSVfQcaxFY&#34;&gt;heorics&lt;/a&gt; of lichess.org&amp;rsquo;s single developer, I decided to try to create a similar web-based online chess app, with matchmaking. The main goal of this project is to use my knowledge of system design to make a robust and scalable app that could theoretically handle a large number of users. This involves knowlege of infastructure tools, and overcoming dificulties such as scaling a Web-Socket app (hint: you will need sticky sessions for your load-balancer!).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Budgeting App</title>
+				<link>http://localhost:1313/portfolio/portfolio3/</link>
+				<pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/portfolio/portfolio3/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://github.com/jwhogg/Rails-Burndown-Budgeting-App&#34;&gt;Github 🔗&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;On ongoing project of mine, taking inspriation from Monzo&amp;rsquo;s budgeting burndown feature. I&amp;rsquo;m building this web app with Ruby-on-Rails, and using the GoCardless API to handle linking user&amp;rsquo;s bank accounts to the app securely.&lt;/p&gt;&#xA;&lt;!-- &lt;img src=&#34;http://localhost:1313/images/monzo_burndown.png&#34; alt=&#34;The inspiration for the project: monzo&#39;s &#39;targets&#39; tab.&#34; width=&#34;60%&#34;&gt; --&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img&#xA;    src=&#34;http://localhost:1313/images/monzo_burndown.webp#smaller&#34;&#xA;    alt=&#34;budgeting inspo&#34;&#xA;    loading=&#34;lazy&#34;&#xA;    &#xA;  /&gt;&#xA;  &lt;figcaption&gt;budgeting inspo&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&#xA;&lt;span class=&#34;text-gray-500 text-sm&#34;&gt;&#xA;  The inspiration for the project: monzo&#39;s &#39;targets&#39; tab.&#xA;&lt;/span&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;So far, I am building the MVP, and have implemented functionality to link a bank account with the app, and to store the user&amp;rsquo;s key to access their bank account data using server-side sessions, which are much more secure than cookies sesion storage.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Fine-tuning GPT2-2</title>
+				<link>http://localhost:1313/portfolio/portfolio4/</link>
+				<pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/portfolio/portfolio4/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://github.com/jwhogg/GPT-2-Fine-Tuning/tree/main&#34;&gt;Github 🔗&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;A brief jupyter notebook I made showing how to fine tune a model using the 🤗 Transformers libary. The example I wrote uses the popular CNN/DailyMail dataset.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Youtube2Summary</title>
+				<link>http://localhost:1313/portfolio/portfolio1/</link>
+				<pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/portfolio/portfolio1/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://github.com/jwhogg/youtube_to_summary&#34;&gt;Github 🔗&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;🤗 Pipeline to generate summaries of youtube videos, using Whisper-Small for transcription, and BART-LARGE-XSUM for summarisation.&lt;/p&gt;&#xA;&lt;p&gt;BART has been finetuned on the popular CNN/Daily Mail Dataset, as it lends itself to summarisation tasks. Initially, we attempted to fine-tune GPT-2 for the summarisation task, but found it had poor performance: being a generative transfotmer, it generates words one-by-one, (extractive summarisation) whereas BART can generate at the sentence level (using abstractive summarisation). For more info on choice of summarisation model, see this article. We use the HuggingFace Transformers libary to abstract some of the PyTorch code using the pipeline submodule.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Causal Implicit GAN: Data Augmentation for Causal Discovery</title>
+				<link>http://localhost:1313/portfolio/portfolio2/</link>
+				<pubDate>Tue, 16 May 2023 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/portfolio/portfolio2/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://github.com/jwhogg/CIGAN&#34;&gt;Github 🔗&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;My University dissertation research project, where I designed and trained a GAN model for data augmentation (generating new training samples for downstream models). I was very proud to receive a score of 83 on this disseration (high 1st).&lt;/p&gt;&#xA;&lt;!-- &lt;img src=&#34;http://localhost:1313/images/cigan.png&#34; alt=&#34;A high-level overview of the CIGAN project&#34; width=&#34;60%&#34;&gt; --&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img&#xA;    src=&#34;http://localhost:1313/images/cigan.webp#small&#34;&#xA;    alt=&#34;cigan&#34;&#xA;    loading=&#34;lazy&#34;&#xA;    &#xA;  /&gt;&#xA;  &lt;figcaption&gt;cigan&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&#xA;&lt;span class=&#34;text-gray-500 text-sm&#34;&gt;&#xA;  A high-level overview of the CIGAN project&#xA;&lt;/span&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;The data the GAN generates is intended for use on Causal Discovery models, an area where quality ground-truth datasets are hard to come by- making data augmentation a valuable technique.  The novel contribution of my project is that the GAN is designed to implicitly learn causal relations, which we hypothesise leads to more &amp;lsquo;realistic&amp;rsquo; output data.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

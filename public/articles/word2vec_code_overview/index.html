@@ -1,193 +1,133 @@
-<!DOCTYPE html>
-<html lang="en-us"
-  dir="ltr">
-
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width"><meta name="description" content="" />
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <title>
-    
-    Implementing Word2Vec in python | jwhogg
-    
+  Implementing Word2Vec in python | jwhogg
 </title>
+<meta
+  name="description"
+  content="Joel&#39;s Personal Website"
+/> 
+<link rel="canonical" href="http://localhost:1313/articles/word2vec_code_overview/" />
 
 
-
-
-
-
-
-<link rel="stylesheet" href="/assets/combined.min.020f42c86d32ba80b53d3fc40ff0090ec5f74817ba9a0391ba123948ca68c7fc.css" media="all">
-
-
-
-
-
-
-
+<meta property="og:title" content="Implementing Word2Vec in python" />
+<meta
+  property="og:description"
+  content="Joel&#39;s Personal Website"
+/>
+<meta
+  property="og:type"
+  content="article"
+/>
+<meta property="og:url" content="http://localhost:1313/articles/word2vec_code_overview/" />
+ 
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Implementing Word2Vec in python" />
+<meta
+  name="twitter:description"
+  content="Joel&#39;s Personal Website"
+/>      
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Implementing Word2Vec in python",
+    "url": "http:\/\/localhost:1313\/articles\/word2vec_code_overview\/",
+    "datePublished": "2024-05-31T17:25:04\u002b01:00",
+    "dateModified": "2024-05-31T17:25:04\u002b01:00",
+    "description": "Joel\u0027s Personal Website"
+  }
+</script>
+ <link rel="apple-touch-icon" sizes="57x57" href="/favicon_io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicon_io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicon_io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicon_io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicon_io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicon_io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicon_io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicon_io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/favicon_io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon_io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/favicon_io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/favicon_io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+ 
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/custom.css">
 
 
   </head>
-
-  
-
-  
-  
-  
-
-  <body class="light">
-
-    <div class="content">
-      <header>
-        
-
-<div class="header">
-    <h1 class="header-title">jwhogg</h1>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header role="banner"><nav class="path-nav" aria-label="Breadcrumb">
+  <ol>
     
-
-    <div class="flex">
-        
-
-        
-        
-        <p class="small ">
-            <a href="/">
-                /home
-            </a>
-        </p>
-
-        <p>        </p>
-        
-        <p class="small ">
-            <a href="/articles">
-                /articles
-            </a>
-        </p>
-
-        <p>        </p>
-        
-        <p class="small ">
-            <a href="/portfolio">
-                /portfolio
-            </a>
-        </p>
-
-        <p>        </p>
-        
-        
-        
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/joel-w-hogg/" target="_blank"
-            rel="noopener noreferrer me"
-            title="Linkedin">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
-            </a>
-            <a href="https://github.com/jwhogg" target="_blank"
-            rel="noopener noreferrer me"
-            title="Github">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-            </a>
-            <a href="mailto:joelhogg45@gmail.com" target="_blank"
-            rel="noopener noreferrer me"
-            title="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-    <polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-            </a>
-        </div>
+  
     
-    </div>
-
-</div>
-      </header>
-
-      <main class="main">
-        
-
-
-
-
-<div class="breadcrumbs">
+  
     
-    <a href="/">Home</a>
-    <span class="breadcrumbs-separator"> > </span>
+  
+  <li>
+    /
+    <a href="/">jwhogg</a>
+    /
+  </li>
+
+  
+  <li>
     
     <a href="/articles/">Articles</a>
-    <span class="breadcrumbs-separator"> > </span>
-    
-    <a class="breadcrumbs-current" href="/articles/word2vec_code_overview/">Implementing Word2Vec in python</a>
-</div>
-
-
-<div >
-
-  <div class="single-intro-container">
-
-    
-
-    <h1 class="single-title">Implementing Word2Vec in python</h1>
-    
-
-    
-
-    <p class="single-readtime">
-      
-      
-      
-      <time datetime="2024-05-31T00:00:00&#43;00:00">May 31, 2024</time>
-      
-
-      
-      &nbsp; · &nbsp;
-      2 min read
-      
-    </p>
-
-  </div>
+    /
+  </li>
 
   
+  <li class="current">
+    
+    <a href="/articles/word2vec_code_overview/">Implementing Word2Vec in python</a>
+    
+  </li>
 
+  </ol>
+</nav>
+
+
+
+</header>
+    <main id="main-content" role="main">
+  <h1>Implementing Word2Vec in python</h1>
   
 
-  
 
   
+  
+  
+  
 
-  <div class="single-content">
-    <p>We will be implementing the Neural Network for the Continuous Bag of Words (CBOW) from the word2vec paper. This article assumes you have a good understanding of the high-level of word2vec. This will be covered in coming articles also.</p>
+   
+   <p>We will be implementing the Neural Network for the Continuous Bag of Words (CBOW) from the word2vec paper. This article assumes you have a good understanding of the high-level of word2vec. This will be covered in coming articles also.</p>
 <p>Our goal is to train with sample pairs $(y,X)$, where $y$ is the target word, and $X$ is one of the context words from within the window.
-
-
-
-
-
-
-
-
-
-
-
-<figure class="">
-
-    <div>
-        <img loading="lazy" alt="Neural Network for Word2Vec" src=" /images/word2vec_nn_diagram.png">
-    </div>
-
+<figure>
+  <img
+    src="/images/word2vec_nn_diagram.png"
+    alt="Neural Network for Word2Vec"
+    loading="lazy"
     
-</figure></p>
+  />
+  <figcaption>Neural Network for Word2Vec</figcaption>
+  </figure>
+</p>
 <p>The error function we want to minimise:</p>
 <ul>
 <li>This is negaitve log likelihood, but for our purposes is same as cross entropy loss
@@ -204,21 +144,29 @@ $$ A_1 = XW_1 \newline A_2 = A_1W_2 \newline Z = softmax(A_2) $$</p>
 <li>$W_{1}$ is weight matrix for the input-&gt;hidden layer</li>
 <li>$Z$ is the output of the NN (probabilities of each word)</li>
 </ul>
-<h5 id="pseudocode-for-the-models-forward-method">Pseudocode for the model&rsquo;s forward() method:</h5>
+
+
+<h5 id="pseudocode-for-the-models-forward-method">
+  Pseudocode for the model&rsquo;s forward() method:
+</h5>
 <p>(where @ is dot product)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a1 = X @ w1
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a1 = X @ w1
 </span></span><span style="display:flex;"><span>a2 = a1 @ w2
 </span></span><span style="display:flex;"><span>z = softmax(a2)
 </span></span></code></pre></div><p>Softmax function:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">softmax</span>(X):
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">softmax</span>(X):
 </span></span><span style="display:flex;"><span>    res = []
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">for</span> x <span style="font-weight:bold">in</span> X:
 </span></span><span style="display:flex;"><span>        exp = np.exp(x)
 </span></span><span style="display:flex;"><span>        res.append(exp / exp.sum())
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">return</span> res
-</span></span></code></pre></div><h5 id="pseudocode-for-backprop">Pseudocode for backprop:</h5>
+</span></span></code></pre></div>
+
+<h5 id="pseudocode-for-backprop">
+  Pseudocode for backprop:
+</h5>
 <p>remember that our loss equation worked out to be $Z - y$</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>da2 = Z - y
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>da2 = Z - y
 </span></span><span style="display:flex;"><span>dw2 = a1.T @ da2
 </span></span><span style="display:flex;"><span>da1 = da2 @ w2.T
 </span></span><span style="display:flex;"><span>dw1 = X.T @ da1
@@ -232,98 +180,54 @@ $$ A_1 = XW_1 \newline A_2 = A_1W_2 \newline Z = softmax(A_2) $$</p>
 <code>da2</code> is the derivative of a2
 <code>alpha</code> is learning rate
 cross entropy is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">cross_entropy</span>(z, y):
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">cross_entropy</span>(z, y):
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">return</span> - np.sum(np.log(z) * y)
 </span></span></code></pre></div><p>default hyper-params:</p>
 <ul>
 <li>iterations: 50</li>
 <li>learning rate: 0.05</li>
 </ul>
-<h4 id="sources">Sources:</h4>
+
+
+<h4 id="sources">
+  Sources:
+</h4>
 <p><a href="https://jaketae.github.io/study/word2vec/">Code based on work by Jake Tae</a><br>
 <a href="https://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/">Great detailed explanation of Word2Vec by Chris McCormik</a><br>
 <a href="https://www.youtube.com/watch?v=ERibwqs9p38">Stanford lecture on Word2Vec, which gives more detail on the motivation</a></p>
 
-    
-  </div>
+   <div class="time">
+     <time datetime="2024-05-31">2024-05-31&nbsp;</time>
+
+     
+     
+       <span class="reading-time"> · 2 min read</span>
+     
+     
+     
+   </div>
 
   
-  <div class="back-to-top">
-    <a href="#top">
-      back to top
-    </a>
-  </div>
   
+    <div class="comments">
 
 </div>
+  
 
-
-      </main>
+  
+    <div class="terminal-nav">
+      <div class="back-nav">
+        
+          <a href="/articles/" class="back-link">../</a>
+        
+      </div>
     </div>
-
-    <footer>
-      <p>Powered by
-    <a href="https://gohugo.io/">Hugo</a>
-    and
-    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+  
+</main>
+    <footer role="contentinfo"><p role="contentinfo">
+  &copy; Copyright 2026 &middot;
+  <a href="https://github.com/ntk148v/shibui">shibui</a>
 </p>
-
-
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-<script defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
-
-<script defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
-  onload="renderMathInElement(document.body);"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false }
-      ]
-    });
-  });
-</script>
-
-    </footer>
-
+</footer>
   </body>
-
-  <script>
-
-  function isAuto() {
-    return document.body.classList.contains("auto");
-  }
-
-  function setTheme() {
-    if (!isAuto()) {
-      return
-    }
-
-    document.body.classList.remove("auto");
-    let cls = "light";
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      cls = "dark";
-    }
-
-    document.body.classList.add(cls);
-  }
-
-  function invertBody() {
-    document.body.classList.toggle("dark");
-    document.body.classList.toggle("light");
-  }
-
-  if (isAuto()) {
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
-  }
-
-  setTheme();
-
-</script>
-
 </html>

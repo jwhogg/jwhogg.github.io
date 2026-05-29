@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Guides on jwhogg</title>
-    <link>http://localhost:1313/tags/guides/</link>
-    <description>Recent content in Guides on jwhogg</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/guides/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Word2Vec Overview</title>
-      <link>http://localhost:1313/articles/word2vec_intro/</link>
-      <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/articles/word2vec_intro/</guid>
-      <description>In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.&#xA;These 2 papers introduced word2vec to the world back in 2013: [Word2Vec Paper 1](https://arxiv.org/pdf/1301.3781)- introducing CBOW and Skip-Gram [Word2Vec Paper 2](https://arxiv.</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Guides on jwhogg</title>
+		<link>http://localhost:1313/tags/guides/</link>
+		<description>Recent content in Guides on jwhogg</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/guides/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Word2Vec Overview</title>
+				<link>http://localhost:1313/articles/word2vec_intro/</link>
+				<pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/articles/word2vec_intro/</guid>
+				<description>&lt;p&gt;In this article we will introduce the context surrounding word2vec, including the motivation for distributed word embeddings, how the Continious Bag-of-Words and Skip-gram algorithms work, and the advancements since the original paper was released. We will also go into the training of the neural network, so it is assumed you have some knowledge on this.&lt;/p&gt;&#xA;&lt;span class=&#34;text-gray-500 text-sm&#34;&gt;&#xA;  &#xA;These 2 papers introduced word2vec to the world back in 2013: &#xA;&lt;/span&gt;&#xA;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;&lt;figure&gt;&#xA;  &lt;img&#xA;    src=&#34;http://localhost:1313/images/word2vec_paper_1.webp#smaller&#34;&#xA;    alt=&#34;paper1&#34;&#xA;    loading=&#34;lazy&#34;&#xA;    &#xA;  /&gt;&#xA;  &lt;figcaption&gt;paper1&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;&lt;figure&gt;&#xA;  &lt;img&#xA;    src=&#34;http://localhost:1313/images/word2vec_paper_2.webp#smaller&#34;&#xA;    alt=&#34;paper2&#34;&#xA;    loading=&#34;lazy&#34;&#xA;    &#xA;  /&gt;&#xA;  &lt;figcaption&gt;paper2&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;span class=&#34;text-gray-500 text-sm&#34;&gt;&#xA;  [Word2Vec Paper 1](https://arxiv.org/pdf/1301.3781)- introducing CBOW and Skip-Gram&#xA;&lt;/span&gt;&#xA;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;span class=&#34;text-gray-500 text-sm&#34;&gt;&#xA;  [Word2Vec Paper 2](https://arxiv.org/pdf/1310.4546)- Performance Improvements&#xA;&lt;/span&gt;&#xA;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&#xA;&#xA;&lt;h3 id=&#34;motivation&#34;&gt;&#xA;  Motivation&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;For many NLP tasks, we need to learn on data which can&amp;rsquo;t be easily represented numerically. For example, let&amp;rsquo;s look at the popular &lt;a href=&#34;https://huggingface.co/datasets/stanfordnlp/imdb/viewer/plain_text/train&#34;&gt;IMDB dataset&lt;/a&gt;, which gives reviews in one column, and a binary sentiment label in the next:&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
