@@ -69,6 +69,11 @@ name = "portfolio"
 pageRef = "/portfolio"
 weight = 30
 
+[[menus.main]]
+name = "gallery"
+pageRef = "/gallery"
+weight = 40
+
 # Syntax highligth on code blocks
 [markup]
 [markup.highlight]

@@ -1,44 +1,42 @@
-/* You can add custom style here */
-/* Enhanced Table of Contents Styling */
-.toc {
-  position: relative;
+.gallery-grid {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 0 40%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.75rem;
+    row-gap: 0.25rem;
+    margin-top: 1.5rem;
 }
 
-.toc-title {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
+.gallery-grid a {
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    padding: 8px 8px 32px 8px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.25);
+    /*transition: box-shadow 0.2s;*/
 }
 
-.toc-title::before {
-  flex-shrink: 0;
+.gallery-grid a:hover {
+    /*box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.35);*/
 }
 
-/* Visual indicator for TOC depth levels */
-.toc-content ol ol {
-  opacity: 0.85;
+.polaroid-caption {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #555;
+    margin: 6px 0 0 0;
+    min-height: 1em;
 }
 
-.toc-content ol ol ol {
-  opacity: 0.7;
-}
-
-/* Smooth transitions for links in TOC */
-.toc-content a {
-  position: relative;
-}
-
-.toc-content a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-text-primary);
-  transition: width 0.2s ease-in-out;
-}
-
-.toc-content a:hover::after {
-  width: 100%;
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s;
+    border: none;
+    border-radius: 0;
+    outline: none;
 }

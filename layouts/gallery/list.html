@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <div class="gallery-grid">
+    {{ $photos := resources.Get "gallery.yaml" | transform.Unmarshal }}
+    {{ range $photos }}
+      <a href="/images/gallery/{{ .file }}" target="_blank">
+        <img src="/images/gallery/{{ .file }}" alt="{{ .caption }}" loading="lazy">
+        {{ with .caption }}<p class="polaroid-caption">{{ . }}</p>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+{{ end }}
