@@ -1,3 +1,14 @@
+.home-social {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.home-social a {
+    text-decoration: none;
+}
+
 .gallery-grid {
     width: 100vw;
     margin-left: calc(50% - 50vw);
